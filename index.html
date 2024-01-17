@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Best Practices in Software Development</title>
+
+    <meta name="description" content="Refactor an Electricity Grid Simulation Script">
+    <meta name="author" content="Ole Mussmann">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js/dist/theme/black.css" id="theme">
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+
+    <!-- tweak colors and minor details -->
+    <link rel="stylesheet" href="reveal.js/custom_css/escience_4.3.1.css" id="theme">
+
+    <link rel="shortcut icon" type="image/png" href="./files/favicon-32x32.png"/>
+  </head>
+
+  <body onload="setTimeout(function(){addDecorations();}, 100);">
+    <div class="reveal">
+
+      <div id="hidden" style="display: none;">
+        <div id="decoration">
+          <div id="blue_pane_left" style="transition: opacity 1s; background-color: #009DDD; opacity: 0; position: absolute; left: 0; right: 50%; bottom: 0; top: 0; z-index: 2;"></div>
+          <div id="blue_pane_right" style="transition: opacity 1s; background-color: #009DDD; opacity: 0; position: absolute; left: 50%; right: 0; bottom: 0; top: 0; z-index: 2;"></div>
+          <div id="touch_pane" style="background-color: white; transition: opacity 1s; opacity: 0; position: absolute; left: 0; right: 66.6%; bottom: 0; top: 0; display: flex; align-items: center; justify-content: center; z-index: 2;">
+            <h1 style="color: black; text-align: left;">Let's stay<br>in touch</h1>
+          </div>
+          <div id="purple_half_circle_top" style="transition: top 1s; opacity: 1; position: absolute; background-color: #380339; left: 0; top: -17vw; width: 34vw; height: 17vw; border-radius: 0 0 20vw 20vw; z-index: 2;"></div>
+          <div id="yellow_half_strip" style="opacity: 1; transition: bottom 1s; position: absolute; background-color: #FFB213; right: 50%; bottom: -25vw; width: 17vw; height: 25vw; border-radius: 20vw 0 0 0; z-index: 2;"></div>
+          <div id="purple_strip_bottom" style="opacity: 1; transition: bottom 1s; position: absolute; background-color: #380339; right: calc(50% + 17vw); bottom: -10vw; width: 16vw; height: 10vw; border-radius: 20vw 20vw 0 0; z-index: 2;"></div>
+          <div id="logo_color" style="transition: opacity 1s, left 1s; opacity: 0; position: absolute; left: -12vw; top: 1.5vh; z-index: 2;">
+            <img style="width: 12vw;" src="./files/logo-fc.svg">
+          </div>
+          <div id="logo_part_white" style="transition: opacity 1s, left 1s; opacity: 0; position: absolute; left: -12vw; top: 1.5vh; z-index: 2;">
+            <img style="width: 12vw;" src="./files/logo-fc-part-white.svg">
+          </div>
+          <div id="logo_white" style="transition: opacity 1s, left 1s; opacity: 0; position: absolute; left: -12vw; top: 1.5vh; z-index: 2;">
+            <img style="width: 12vw;" src="./files/logo-fc-white.svg">
+          </div>
+          <div id="purple_overlay" style="background-color: #380339; opacity: 0; transition: opacity 1s; position: absolute; left: 0; right: 0; bottom: 0; top: 0; z-index: 1;">
+          </div>
+          <div id="blue_overlay" style="background-color: #009DDD; opacity: 0; transition: opacity 1s; position: absolute; left: 0; right: 0; bottom: 0; top: 0; z-index: 1;">
+          </div>
+          <div id="white_overlay" style="background-color: white; opacity: 0; transition: opacity 1s; position: absolute; left: 0; right: 0; bottom: 0; top: 0; z-index: 1;">
+          </div>
+          <div id="black_overlay" style="background-color: black; opacity: 0; transition: opacity 1s; position: absolute; left: 0; right: 0; bottom: 0; top: 0; z-index: 1;">
+          </div>
+          <div id="yellow_strip" style="background-color: #FFB213; transition: left 1s; width: 10vw; height: 70vh; border-radius: 10vw 10vw 0 0; z-index: 2; position: absolute; left: -10vw; bottom: 0;">
+          </div>
+          <div id="yellow_flag" style="background-color: #FFB213; transition: left 1s, bottom 1s; width: 10vh; height: 12vh; border-radius: 0 6vh 6vh 0; z-index: 3; position: absolute; left: -10vh; bottom: 5vh; margin: 0; padding: 0;">
+            <img id="left_e" src="./files/e-logo.svg" style="position: absolute; height: 10vh; margin: 1vh 0; padding: 0;"></img>
+          </div>
+          <div id="purple_half_circle_bottom" style="transition: bottom 1s; background-color: #380339; width: 20vw; height: 10vw; border-radius: 20vw 20vw 0 0; z-index: 2; position: absolute; left: 0; bottom: -10vw;">
+            <img id="left_e" src="./files/logo-fc-part-white.svg" style="position: absolute; bottom: 2vw; left: 6vw; width: 8vw;"></img>
+          </div>
+          <div id="purple_blob" style="transition: top 1s; position: absolute; display: flex; right: 0; top: -50vh; z-index: 2;">
+            <div style="background-color: #380339; width: 10vw; height: 25vh; border-radius: 0 0 10vw 10vw;">
+            </div>
+            <div style="background-color: #380339; width: 10vw; height: 50vh; border-radius: 0 0 10vw 10vw;">
+            </div>
+            <div class="box" style="background: #380339; position: absolute; right: 10vw; top: 0; width: 5vw; height: calc(25vh + 5vw); border-corner-shape: scoop; background: yellow; background: linear-gradient(45deg,  transparent 10vw, #380339 0) bottom left; background-image: radial-gradient(circle at 0 100%, rgba(204,0,0,0) 5vw, #380339 15px)">
+            </div>
+          </div>
+          <div id="blue_strip" style="background-color: #009DDD; transition: left 1s, right 1s; margin: 0; padding: 0; border-radius: 20vw 0 0 0; z-index: 2; position: absolute; right: -100vw; bottom: 0;">
+            <div id="footer" style="text-align: right; line-height: 130%; padding: 0; margin: 1vw 1vw 1vw 3vw; bottom: 0; right: 0;">
+            </div>
+          </div>
+          <img id="right_e" src="./files/letter-e.svg" style="transition: right 1s, top 1s; position: absolute; top: 10vh; right: -4vw; width: 4vw; z-index: 3;"></img>
+        </div>
+      </div>
+
+      <div class="slides">
+        <section data-markdown="00_title.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<!--
+title: Best Practices in Software Development
+description: Refactor an Electricity Grid Simulation Script
+author: Ole Mussmann
+version: 4.3.1
+plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, RevealMenu, RevealNotes, RevealSearch, RevealZoom
+-->
+
+<!-- .slide: data-state="blue_overlay yellow_flag yellow_strip purple_half_circle_bottom purple_blob right_e_top" data-background-video="./files/Mood video Homepage 2.mp4" data-background-video-loop data-background-video-muted="true" -->
+
+# Best Practices
+## for Software Development
+
+[Ole Mussmann](mailto:o.mussmann@esciencecenter.nl)
+
+</section>
+<section data-markdown="01_TOC.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<!-- .slide: data-state="standard" -->
+## Table of Contents
+
+- [./abc](abc)
+- [./abc](abc)
+
+</section>
+<section data-markdown="02_problem.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<!-- .slide: data-state="standard" -->
+# Setting
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Power Grid Simulation
+
+Your colleague Sam has written a simulation of a power grid:
+
+<img style="height: 2.5em; padding-right: 2em;" src="./files/grid.svg">
+
+- Circular architecture of identical <span style="color: #bf8d2e"><b>Lines</b></span>
+- One <span style="color: #9259a3"><b>Generator</b></span>
+- Two loads: <span style="color: #ca3c32"><b>Datacenter</b></span> and <span style="color: #399746"><b>Factory</b></span>
+
+They want to analyze how changing reactive power of the load <span style="color: #399746"><b>Factory</b></span> changes the reactive load angles of the lines.
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Flashback: Physics
+
+![Phase Shift](./files/Phase_shift.svg)
+
+<div style="font-size: small;">
+
+Adapted, from [commons.wikimedia.org/wiki/File:Phase_shift.svg](https://commons.wikimedia.org/wiki/File:Phase_shift.svg) under [CC BY-SA 3.0 Deed](https://creativecommons.org/licenses/by-sa/3.0/deed.en)
+
+</div>
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Problem
+
+Sam's code does not scale well. There might be bugs. They know you have been following the ESI-far workshop and ask you to refactor their code.
+
+</section>
+<section data-markdown="03_running.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<!-- .slide: data-state="standard" -->
+# Code Environments
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Environment Definition
+
+So you've got the code file. Now what...?
+
+<ul>
+  <li>What language is it written in? <span class="fragment">Python</span></li>
+  <li class="fragment">What version of Python? <span class="fragment">🤔</span></li>
+  <li class="fragment">What libraries does it use? <span class="fragment">🧐</span></li>
+  <ul class="fragment">
+    <li><code>matplotlib</code></li>
+    <li><code>numpy</code></li>
+    <li><code>pypsa</code></li>
+  </ul>
+  <li class="fragment">What versions of those libraries...? <span class="fragment">🤔🤔</span></li>
+</ul>
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Encapsulation
+
+Say you install `pypsa` on your system. What if you need a different `pypsa` version for a different project?
+
+Can we create separate environments for different projects?
+
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Python Environments
+
+<div style="width: 29%; float: left; margin-left: 15%;">
+
+- `venv`
+- `conda env`
+- `poetry`
+- `pmd`
+- `nix`
+- ...
+
+</div>
+
+<div style="width: 49%; float: right; margin-right: 5%;" class="fragment">
+☯ Zen of Python ☯
+<blockquote><b>Rule 13</b> <br> There should be one - and preferably only one - obvious way to do it. </blockquote>
+</div>
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Create a Library File
+
+<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash"># requirements.txt
+black
+matplotlib
+numpy
+pypsa
+</code></pre>
+
+<br>
+
+<div class="fragment">
+    <img style="width: 3em; margin: 0; padding: 0 2em; float: left;" src="./files/hacker-cat.png">
+    <div style="float: left; width: 50%;">
+        Create a <code>requirements.txt</code> file containing all the libraries we use.
+    </div>
+</div>
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Virtual Environment
+
+<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash" data-line-numbers>$ python -m venv .venv
+$ source .venv/bin/activate
+$ pip install -r requirements.txt
+</code></pre>
+
+<br>
+
+<div class="fragment">
+    <img style="width: 3em; margin: 0; padding: 0 2em; float: left;" src="./files/hacker-cat.png">
+    <div style="float: left; width: 50%;">
+        Create a virtual environment and install libraries.
+    </div>
+</div>
+
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Pinning Libraries
+
+If your code runs, find out your libraries- and Python versions.
+
+<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash">$ pip freeze
+attrs==23.2.0
+blosc2==2.4.0
+Bottleneck==1.3.7
+certifi==2023.11.17
+[...]
+</code></pre>
+
+<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash">$ python --version 
+Python 3.10.13
+</code></pre>
+
+<div class="fragment">
+  <img style="width: 3em; margin: 0; padding: .5em 2em; float: left;" src="./files/hacker-cat.png">
+  <div style="float: left; width: 70%;">
+    Update the <code>requirements.txt</code> file with pinned libraries. Mention the Python version in the <code>README.md</code> file.
+  </div>
+
+</div>
+
+
+</section>
+<section data-markdown="04_comments.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<!-- .slide: data-state="standard" -->
+# # Comments [1/2]
+
+<div class="fragment">
+
+`code`__#_comment
+
+</div>
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Improvements
+
+<img style="width: 3em; margin: 0; padding: 1em 1em; float: left;" src="./files/hacker-cat.png">
+<div style="float: left; width: 75%;">
+
+- Read the code of <code>script.py</code>.
+- Ask questions and understand every variable.
+- Add comments for comprehension.
+
+<b>More comments are better!</b>
+</div>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+## Understanding the Code
+
+<pre data-id="comments_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>network.add("Bus", "My bus 2", v_nom=20.0)
+network.add("Line", "My line 0", bus0="My bus 0", bus1="My bus 1", x=0.1, r=0.01)
+network.add("Generator", "My generator", bus="My bus 0", p_set=100, control="PQ")
+network.add("Load", "Factory", bus="My bus 1", p_set=70, q_set=0)
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+## Understanding the Code
+
+<pre data-id="comments_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers="1-5|6-13|14-20|21-27">network.add(
+    "Bus",  # Component type
+    "My bus 2",  # Component name
+    v_nom=20.0  # Nominal Voltage
+)
+network.add(
+    "Line",  # Component type
+    "My line 0",  # Component name
+    bus0="My bus 0",  # Origin
+    bus1="My bus 1",  # Target
+    x=0.1,  # Series Reactance
+    r=0.01  # Series Resistance
+)
+network.add(
+    "Generator",  # Component type
+    "My generator",  # Component name
+    bus="My bus 0",  # Location
+    p_set=100,  # Active Power Setpoint
+    control="PQ"  # Control Strategy
+)
+network.add(
+    "Load",  # Component type
+    "Datacenter",  # Component name
+    bus="My bus 2",  # Location
+    p_set=70,  # Active Power Setpoint
+    q_set=0  # Reactive Power Setpoint
+)
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Less Comments Are Better
+
+Wait, what?
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+## Verbose Variable Names
+
+<pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># bus load angles
+bla_0 = []
+bla_1 = []
+bla_2 = []
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+## Verbose Variable Names
+
+<pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># bus load angles
+bus_0_load_angles = []
+bla_1 = []
+bla_2 = []
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+## Verbose Variable Names
+
+<pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># bus load angles
+bus_0_load_angles = []
+bus_1_load_angles = []
+bla_2 = []
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+## Verbose Variable Names
+
+<pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># bus load angles
+bus_0_load_angles = []
+bus_1_load_angles = []
+bus_2_load_angles = []
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+## Verbose Variable Names
+
+<pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>bus_0_load_angles = []
+bus_1_load_angles = []
+bus_2_load_angles = []
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+## Verbose Variable Names
+
+<pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>bus_0_load_angles = []
+bus_1_load_angles = []
+bus_2_load_angles = []
+</code></pre>
+
+<br>
+
+<div>
+  <img style="width: 3em; margin: 0; padding: 0em 1em; float: left;" src="./files/hacker-cat.png">
+  <div style="float: left; width: 75%;">
+    Replace incomprehensible variable names with good ones.
+  </div>
+</div>
+
+</section>
+<section data-markdown="05_debugging.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<!-- .slide: data-state="standard" -->
+# Debugging 🐞
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Powerful Weapons
+
+<br>
+
+<span class="fragment"><code>print()</code></span>
+
+<span class="fragment"><code>exit()</code></span>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+## Gather Intelligence
+
+<pre data-id="print_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers="1-5">network.add(
+    "Bus",
+    "My bus 2",
+    v_nom=20.0  # Nominal Voltage
+)
+network.add(
+    "Line",
+    "My line 0",
+    bus0="My bus 0",  # Origin
+    bus1="My bus 1",  # Target
+    x=0.1,  # Series Reactance
+    r=0.01  # Series Resistance
+)
+network.add(
+    "Generator",
+    "My generator",
+    bus="My bus 0",
+    p_set=100,  # Active Power Setpoint
+    control="PQ"  # Control Strategy
+)
+network.add(
+    "Load",
+    "Datacenter",
+    bus="My bus 2",
+    p_set=70,  # Active Power Setpoint
+    q_set=0  # Reactive Power Setpoint
+)
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+## Gather Intelligence
+
+<pre data-id="print_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers="1-9">print()
+print("### Empty network:")  # Tip: findable prints ###
+print(network)
+print()
+network.add(
+    "Bus",
+    "My bus 2",
+    v_nom=20.0  # Nominal Voltage
+)
+network.add(
+    "Line",
+    "My line 0",
+    bus0="My bus 0",  # Origin
+    bus1="My bus 1",  # Target
+    x=0.1,  # Series Reactance
+    r=0.01  # Series Resistance
+)
+network.add(
+    "Generator",
+    "My generator",
+    bus="My bus 0",
+    p_set=100,  # Active Power Setpoint
+    control="PQ"  # Control Strategy
+)
+network.add(
+    "Load",
+    "Datacenter",
+    bus="My bus 2",
+    p_set=70,  # Active Power Setpoint
+    q_set=0  # Reactive Power Setpoint
+)
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+## Gather Intelligence
+
+<pre data-id="print_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers="1-17">print()
+print("### Empty network:")  # Tip: findable prints ###
+print(network)
+print()
+network.add(
+    "Bus",
+    "My bus 2",
+    v_nom=20.0  # Nominal Voltage
+)
+print()
+print("### Added bus 'My bus 2")
+print("### Network:")
+print(network)
+print("### Buses:")
+print(network.buses)
+print()
+exit()
+network.add(
+    "Line",
+    "My line 0",
+    bus0="My bus 0",  # Origin
+    bus1="My bus 1",  # Target
+    x=0.1,  # Series Reactance
+    r=0.01  # Series Resistance
+)
+network.add(
+    "Generator",
+    "My generator",
+    bus="My bus 0",
+    p_set=100,  # Active Power Setpoint
+    control="PQ"  # Control Strategy
+)
+network.add(
+    "Load",
+    "Datacenter",
+    bus="My bus 2",
+    p_set=70,  # Active Power Setpoint
+    q_set=0  # Reactive Power Setpoint
+)
+</code></pre>
+
+<div class="fragment">
+
+Tip: List object attributes
+
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers="1">print(dir(network))
+</code></pre>
+
+<div>
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Find Bugs
+
+<div>
+  <img style="width: 2em; margin: 0; padding: 0em 0em 0em 20%; float: left;" src="./files/hacker-cat.png">
+  <div style="float: left; width: 60%; padding-top: .25em;">
+    Find the bug in the network setup.
+  </div>
+</div>
+
+</section>
+<section data-markdown="06_code_data.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<!-- .slide: data-state="standard" -->
+<h1 style="transform: translate(-30%, -20%);">Split Code</h1>
+<h1 style="transform: translate(30%, 20%);">And Data</h1>
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Code? Data? Parameters?
+
+Imagine you want to change simulation parameters. All resistances of 0.1 Ohm shall be replaced by 1 Ohm.
+
+<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>x_1 = 0.1
+x_2 = 0.1
+r_1 = 0.1
+r_2 = 0.1
+</code></pre>
+
+<span class="fragment">Which values to replace?</span>
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Config File
+
+<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># config.py
+reactance = 0.1  # [Ohm]
+resistance = 1.0  # [Ohm]
+</code></pre>
+
+<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
+import config
+
+x_1 = config.resistance  
+x_2 = config.resistance
+r_1 = config.reactance
+r_2 = config.reactance
+</code></pre>
+
+<div class="fragment">
+  <img style="width: 2em; margin: 0; padding: 0em 0em 0em 10%; float: left;" src="./files/hacker-cat.png">
+  <div style="float: left; width: 70%; padding-top: .25em;">
+    Create a config file to split code and data.
+  </div>
+</div>
+
+---
+
+<!-- .slide: data-state="standard" -->
+## Benefits
+
+- Self-documenting
+- Change parameters without changing script
+- Store `config.py` with your results for reproducibility
+
+</section>
+<section data-markdown="07_functions.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<!-- .slide: data-state="standard" -->
+# Functions
+Reuse code for readability and robustness
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+
+## Code to Functions
+
+Are there repeating sections of code that could be a function?
+
+<pre data-id="functions_1" class="fragment"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>bla_0.append([...][f"My bus 0"].iloc[0] * 180 / np.pi)
+bla_1.append([...][f"My bus 1"].iloc[0] * 180 / np.pi)
+bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+
+## Code to Functions
+
+Are there repeating sections of code that could be a function?
+
+<pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
+    return radians * 180 / np.pi
+
+bla_0.append([...][f"My bus 0"].iloc[0] * 180 / np.pi)
+bla_1.append([...][f"My bus 1"].iloc[0] * 180 / np.pi)
+bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+
+## Code to Functions
+
+Are there repeating sections of code that could be a function?
+
+<pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
+    return radians * 180 / np.pi
+
+bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
+bla_1.append([...][f"My bus 1"].iloc[0] * 180 / np.pi)
+bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+
+## Code to Functions
+
+Are there repeating sections of code that could be a function?
+
+<pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
+    return radians * 180 / np.pi
+
+bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
+bla_1.append(radians_to_degrees([...][f"My bus 1"].iloc[0]))
+bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+
+## Code to Functions
+
+Are there repeating sections of code that could be a function?
+
+<pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
+    return radians * 180 / np.pi
+
+bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
+bla_1.append(radians_to_degrees([...][f"My bus 1"].iloc[0]))
+bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+
+## Code to Functions
+
+Are there repeating sections of code that could be a function?
+
+<pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
+    return radians * 180 / np.pi  # in degrees
+
+bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
+bla_1.append(radians_to_degrees([...][f"My bus 1"].iloc[0]))
+bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+
+## Code to Functions
+
+Are there repeating sections of code that could be a function?
+
+<pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
+    degrees = radians * 180 / np.pi
+    return degrees
+
+bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
+bla_1.append(radians_to_degrees([...][f"My bus 1"].iloc[0]))
+bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" data-auto-animate -->
+
+## Code to Functions
+
+Are there repeating sections of code that could be a function?
+
+<pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
+    degrees = radians * 360 / (2 * np.pi)
+    return degrees
+
+bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
+bla_1.append(radians_to_degrees([...][f"My bus 1"].iloc[0]))
+bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
+</code></pre>
+
+---
+
+<!-- .slide: data-state="standard" -->
+
+## Create a Function
+
+<pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
+    degrees = radians * 360 / (2 * np.pi)
+    return degrees
+
+bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
+bla_1.append(radians_to_degrees([...][f"My bus 1"].iloc[0]))
+bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
+</code></pre>
+
+<img style="width: 2em; margin: 0; padding: 0em 1em 0em 10%; float: left;" src="./files/hacker-cat.png">
+<div style="float: left; width: 70%; padding-top: .25em;">
+  Create a <code>radians_to_degrees</code> function.
+</div>
+
+<br>
+<br>
+
+<div class="fragment" style="width: 100%; float: left;">
+Hey, that's useful! Could we use this in other projects too? 🤔
+<div>
+
+</section>
+<section data-markdown="08_modules.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<!-- .slide: data-state="standard" -->
+# Modules
+Reusable functions and layers of abstractions
+
+---
+
+<!-- .slide: data-state="standard" -->
+
+## Yet Another File
+
+<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># conversion.py
+
+import numpy as np
+
+def radians_to_degrees(radians):
+    degrees = radians * 360 / (2 * np.pi)
+    return degrees
+</code></pre>
+
+<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
+import conversions as conv
+
+degrees = conv.radians_to_degrees(0.5)   
+</code></pre>
+
+<div class="fragment">
+  <img style="width: 2em; margin: 0; padding: 0em 1em 0em 10%; float: left;" src="./files/hacker-cat.png">
+  <div style="float: left; width: 60%; padding-top: .25em;">
+    Create a <code>conversions.py</code> module.
+  </div>
+</div>
+
+---
+
+<!-- .slide: data-state="standard" -->
+
+## Python, Help!
+
+<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>$ python
+>>> import conversions as conv
+>>> help(conv.radians_to_degrees)
+radians_to_degrees()
+</code></pre>
+
+<br>
+
+<div class="fragment">
+  Huh. Well that's not very useful. 🤷‍♀️
+</div>
+
+</section>
+
+      </div>
+    </div>
+
+    <script src="reveal.js/4.3.1/reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/zoom/zoom.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/math/math.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/search/search.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js/plugin/highlight/highlight.js"></script>
+
+    <script src="reveal.js/4.3.1/reveal.js-plugins/menu/menu.js"></script>
+    <script src="reveal.js/4.3.1/reveal.js-plugins/chalkboard/plugin.js"></script>
+    <!--script src="reveal.js/4.3.1/reveal.js-plugins/fullscreen/plugin.js"></script-->
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+    <link rel="stylesheet" href="reveal.js/4.3.1/reveal.js-plugins/chalkboard/style.css">
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+          themes: false,
+          transitions: false,
+          markers: true,
+          hideMissingTitles: true,
+        },
+        dependencies: [
+          {src: 'reveal.js/4.3.1/reveal.js-plugins/reveal.js-d3/reveald3.js'}
+        ],
+        chalkboard: { // font-awesome.min.css must be available
+          //src: "chalkboard/chalkboard.json",
+          storage: "chalkboard-demo",
+          toggleChalkboardButton: { left: "80px" },
+          toggleNotesButton: { left: "130px" },
+          readOnly: false,
+        },
+        plugins: [ RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, RevealMenu, RevealNotes, RevealSearch, RevealZoom ]
+      });
+    </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var decoration = $('#decoration').html();
+      if ( window.location.search.match( /print-pdf/gi ) ) {
+        // for pdf export
+        // 3. On Reveal.js ready event, copy decoration <div> into each `.slide-background` <div>
+        Reveal.addEventListener( 'ready', function( event ) {
+          $('.slide-background').append(decoration);
+        });
+      }
+      else {
+        // for viewing slides
+        $('div.reveal').append(decoration);
+        $('#decoration').remove(); // without this the fadeIn/fadeOut below does not work. why is this necessary?
+      };
+      function setLogoStyle(style) {
+        //style must be one of {"logo_color","logo_white","logo_part_white"}
+
+        //unset everything
+        document.getElementById("logo_color").style.opacity = 0;
+        document.getElementById("logo_white").style.opacity = 0;
+        document.getElementById("logo_part_white").style.opacity = 0;
+
+        //set only what we want
+        document.getElementById(style).style.opacity = 1;
+      };
+      var overview_shown = false;
+      function getOpacity(data_state) {
+        var opacity = 0.8;
+        for (let i = 0; i < 11; i++) {
+          if (data_state.includes(i)) { opacity = i/10; console.log("opacity set to " + opacity)}
+        };
+        return opacity
+      };
+      function addDecorations() {
+        console.log("== set decorations ==")
+        var currentSlide = Reveal.getCurrentSlide();
+        console.log(currentSlide.querySelector("footer"));
+        if (currentSlide.contains(currentSlide.querySelector('footer')))
+        {
+          document.getElementById("footer").innerHTML = currentSlide.querySelector('footer').innerHTML;
+          document.getElementById("blue_strip").style.right = 0;
+          console.log("footer (and blue_strip)");
+        } else {
+          document.getElementById("blue_strip").style.right = "-" + document.getElementById("blue_strip").offsetWidth + "px";
+          console.log("no footer");
+        };
+        if ( currentSlide.getAttribute('data-state') )
+        {
+          var data_state = currentSlide.getAttribute('data-state')
+          var opacity = getOpacity(data_state);
+          console.log("DS" + data_state)
+          // pre-set slide designs
+
+          // standard
+          if ( data_state.includes("standard"))
+          {
+            data_state += " logo yellow_flag white_overlay";
+          };
+
+          // two_pane
+          if ( data_state.includes("two_pane"))
+          {
+            data_state += " logo yellow_flag white_overlay blue_pane_right";
+          };
+
+          // about
+          if ( data_state.includes("about"))
+          {
+            data_state += " logo white_overlay blue_pane_left purple_half_circle_top purple_strip_bottom yellow_half_strip";
+          };
+
+          // touch
+          if ( data_state.includes("touch"))
+          {
+            data_state += " logo blue_overlay touch_pane purple_blob right_e_bottom";
+          };
+
+          // individual elements
+
+          // purple overlay
+          if ( data_state.includes("purple_overlay"))
+          {
+            document.getElementById("purple_overlay").style.opacity = opacity;
+            document.getElementById("purple_overlay").style.transform = "translateY(0)";
+            document.getElementById("logo_color").style.opacity = 0;
+            document.getElementById("logo_white").style.opacity = 0;
+            document.getElementById("logo_part_white").style.opacity = 1;
+            currentSlide.classList.remove("has-light-background");
+            console.log("purple overlay");
+          } else {
+            document.getElementById("purple_overlay").style.opacity = 0;
+            console.log("no purple overlay");
+          };
+
+          // white overlay
+          if ( data_state.includes("white_overlay"))
+          {
+            document.getElementById("white_overlay").style.opacity = opacity;
+            document.getElementById("white_overlay").style.transform = "translateY(0)";
+            document.getElementById("logo_color").style.opacity = 1;
+            document.getElementById("logo_white").style.opacity = 0;
+            document.getElementById("logo_part_white").style.opacity = 0;
+            currentSlide.classList.add("has-light-background");
+            console.log("white overlay");
+          } else {
+            document.getElementById("white_overlay").style.opacity = 0;
+            console.log("no white overlay");
+          };
+
+          // black overlay
+          if ( data_state.includes("black_overlay"))
+          {
+            document.getElementById("black_overlay").style.opacity = opacity;
+            document.getElementById("black_overlay").style.transform = "translateY(0)";
+            document.getElementById("logo_color").style.opacity = 0;
+            document.getElementById("logo_white").style.opacity = 0;
+            document.getElementById("logo_part_white").style.opacity = 1;
+            currentSlide.classList.remove("has-light-background");
+            console.log("black overlay");
+          } else {
+            document.getElementById("black_overlay").style.opacity = 0;
+            console.log("no black overlay");
+          };
+
+          // blue overlay
+          if ( data_state.includes("blue_overlay"))
+          {
+            document.getElementById("blue_overlay").style.opacity = opacity;
+            document.getElementById("blue_overlay").style.transform = "translateY(0)";
+            document.getElementById("logo_color").style.opacity = 0;
+            document.getElementById("logo_white").style.opacity = 1;
+            document.getElementById("logo_part_white").style.opacity = 0;
+            currentSlide.classList.remove("has-light-background");
+            console.log("blue overlay");
+          } else {
+            document.getElementById("blue_overlay").style.opacity = 0;
+            console.log("no blue overlay");
+          };
+
+          // blue pane right
+          if ( data_state.includes("blue_pane_right"))
+          {
+            document.getElementById("blue_pane_right").style.opacity = 1;
+            currentSlide.classList.remove("has-dark-background");
+            currentSlide.classList.add("has-light-background");
+            console.log("blue_pane_right");
+          } else {
+            document.getElementById("blue_pane_right").style.opacity = 0;
+            console.log("no blue_pane_right");
+          };
+
+          // blue pane left
+          if ( data_state.includes("blue_pane_left"))
+          {
+            document.getElementById("blue_pane_left").style.opacity = 1;
+            setLogoStyle("logo_white");
+            currentSlide.classList.remove("has-dark-background");
+            currentSlide.classList.add("has-light-background");
+            console.log("blue_pane_left");
+          } else {
+            document.getElementById("blue_pane_left").style.opacity = 0;
+            console.log("no blue_pane_left");
+          };
+
+          // touch pane
+          if ( data_state.includes("touch_pane"))
+          {
+            document.getElementById("touch_pane").style.opacity = 1;
+            setLogoStyle("logo_color");
+            currentSlide.classList.remove("has-light-background");
+            currentSlide.classList.add("has-dark-background");
+            console.log("touch_pane");
+          } else {
+            document.getElementById("touch_pane").style.opacity = 0;
+            console.log("no touch_pane");
+          };
+
+          // logo
+          if ( data_state.includes("logo"))
+          {
+            document.getElementById("logo_color").style.left = 3 + "vw";
+            document.getElementById("logo_part_white").style.left = 3 + "vw";
+            document.getElementById("logo_white").style.left = 3 + "vw";
+            console.log("logo");
+          } else {
+            document.getElementById("logo_color").style.left = -12 + "vw";
+            document.getElementById("logo_part_white").style.left = -12 + "vw";
+            document.getElementById("logo_white").style.left = -12 + "vw";
+            console.log("no logo");
+          };
+
+          // yellow strip
+          if ( data_state.includes("yellow_strip"))
+          {
+            document.getElementById("yellow_strip").style.left = 0;
+            console.log("yellow_strip");
+          } else {
+            document.getElementById("yellow_strip").style.left = -10 + "vw";
+            console.log("no yellow_strip");
+          };
+
+          // yellow flag
+          if ( data_state.includes("yellow_flag"))
+          {
+            document.getElementById("yellow_flag").style.left = 0;
+            console.log("yellow_flag");
+          } else {
+            document.getElementById("yellow_flag").style.left = -10 + "vh";
+            console.log("no yellow_flag");
+          };
+
+          // purple half circle top
+          if ( data_state.includes("purple_half_circle_top"))
+          {
+            document.getElementById("purple_half_circle_top").style.top = 0;
+            setLogoStyle("logo_part_white");
+            console.log("purple_half_circle_top");
+          } else {
+            document.getElementById("purple_half_circle_top").style.top = -17 + "vw";
+            console.log("no purple_half_circle_top");
+          };
+
+          // purple half circle bottom
+          if ( data_state.includes("purple_half_circle_bottom"))
+          {
+            document.getElementById("purple_half_circle_bottom").style.bottom = 0;
+            document.getElementById("yellow_flag").style.bottom = 20 + "vh";
+            console.log("purple_half_circle_bottom");
+          } else {
+            document.getElementById("purple_half_circle_bottom").style.bottom = -10 + "vw";
+            document.getElementById("yellow_flag").style.bottom = 5 + "vh";
+            console.log("no purple_half_circle_bottom");
+          };
+
+          // purple strip bottom
+          if ( data_state.includes("purple_strip_bottom"))
+          {
+            document.getElementById("purple_strip_bottom").style.bottom = 0;
+            console.log("purple_strip_bottom");
+          } else {
+            document.getElementById("purple_strip_bottom").style.bottom = -10 + "vw";
+            console.log("no purple_strip_bottom");
+          };
+
+          // yellow_half_strip
+          if ( data_state.includes("yellow_half_strip"))
+          {
+            document.getElementById("yellow_half_strip").style.bottom = 0;
+            console.log("yellow_half_strip");
+          } else {
+            document.getElementById("yellow_half_strip").style.bottom = -25 + "vw";
+            console.log("no yellow_half_strip");
+          };
+
+          // purple blob
+          if ( data_state.includes("purple_blob"))
+          {
+            document.getElementById("purple_blob").style.top = 0;
+            console.log("purple_blob");
+          } else {
+            document.getElementById("purple_blob").style.top = -50 + "vh";
+            console.log("no purple_blob");
+          };
+
+          // right_e
+          if ( data_state.includes("right_e_top"))
+          {
+            document.getElementById("right_e").style.top = 10 + "vh";
+            document.getElementById("right_e").style.right = 0;
+            console.log("right_e_top");
+          } else if ( data_state.includes("right_e_bottom")){
+            document.getElementById("right_e").style.top = 60 + "vh";
+            document.getElementById("right_e").style.right = 0;
+            console.log("right_e_bottom");
+          } else {
+            document.getElementById("right_e").style.right = -4 + "vw";
+            console.log("no right_e");
+          };
+
+          // clear the background so that the overlays don't interfere
+          // with underlying iframe
+          if ( data_state.includes("clear_background"))
+          {
+            document.getElementById("purple_overlay").style.transform = "translateY(100vh)";
+            document.getElementById("white_overlay").style.transform = "translateY(100vh)";
+            document.getElementById("black_overlay").style.transform = "translateY(100vh)";
+            document.getElementById("blue_overlay").style.transform = "translateY(100vh)";
+            document.getElementById("blue_pane_right").style.transform = "translateY(100vh)";
+            document.getElementById("blue_pane_left").style.transform = "translateY(100vh)";
+            document.getElementById("touch_pane").style.transform = "translateY(100vh)";
+          };
+        }
+        else
+        {
+          console.log("nothing special")
+        };
+      };
+
+      function removeDecorations() {
+        console.log("removeDecorations")
+        document.getElementById("purple_overlay").style.opacity = 0;
+        document.getElementById("white_overlay").style.opacity = 0;
+        document.getElementById("black_overlay").style.opacity = 0;
+        document.getElementById("blue_overlay").style.opacity = 0;
+        document.getElementById("blue_pane_right").style.opacity = 0;
+        document.getElementById("blue_pane_left").style.opacity = 0;
+        document.getElementById("touch_pane").style.opacity = 0;
+        document.getElementById("logo_color").style.left = -12 + "vw";
+        document.getElementById("logo_part_white").style.left = -12 + "vw";
+        document.getElementById("logo_white").style.left = -12 + "vw";
+        document.getElementById("yellow_strip").style.left = -10 + "vw";
+        document.getElementById("yellow_flag").style.left = -10 + "vh";
+        document.getElementById("purple_half_circle_top").style.top = -17 + "vw";
+        document.getElementById("purple_half_circle_bottom").style.bottom = -10 + "vw";
+        document.getElementById("purple_strip_bottom").style.bottom = -10 + "vw";
+        document.getElementById("yellow_half_strip").style.bottom = -25 + "vw";
+        document.getElementById("purple_blob").style.top = -50 + "vh";
+        document.getElementById("right_e").style.right = -4 + "vw";
+        document.getElementById("blue_strip").style.right = "-" + document.getElementById("blue_strip").offsetWidth + "px";
+      };
+
+      Reveal.on( 'slidechanged', event => {
+        if (overview_shown == false)
+        {
+          addDecorations();
+        }
+      });
+      Reveal.on( 'overviewshown', event => {
+        overview_shown = true;
+        removeDecorations();
+      });
+      Reveal.on( 'overviewhidden', event => {
+        overview_shown = false;
+        addDecorations();
+      });
+    </script>
+
+  </body>
+</html>
