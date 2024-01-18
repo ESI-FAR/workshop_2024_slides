@@ -1,9 +1,10 @@
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="blue_overlay 7 yellow_flag logo" id="debugging" data-background="./files/broom-6310388_1280.jpg" -->
+<!-- https://pixabay.com/photos/broom-cleaning-sweep-outdoors-6310388/ -->
 # Debugging 🐞
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="blue_overlay yellow_flag logo" data-background="./files/broom-6310388_1280.jpg" -->
 ## Powerful Weapons
 
 <br>
@@ -14,7 +15,7 @@
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="blue_overlay yellow_flag logo" data-auto-animate data-background="./files/broom-6310388_1280.jpg" -->
 ## Gather Intelligence
 
 <pre data-id="print_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers="1-5">network.add(
@@ -48,7 +49,7 @@ network.add(
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="blue_overlay yellow_flag logo" data-auto-animate data-background="./files/broom-6310388_1280.jpg" -->
 ## Gather Intelligence
 
 <pre data-id="print_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers="1-9">print()
@@ -86,7 +87,7 @@ network.add(
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="blue_overlay yellow_flag logo" data-auto-animate data-background="./files/broom-6310388_1280.jpg" -->
 ## Gather Intelligence
 
 <pre data-id="print_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers="1-17">print()
@@ -130,18 +131,12 @@ network.add(
 )
 </code></pre>
 
-<div class="fragment">
-
-Tip: List object attributes
-
-<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers="1">print(dir(network))
+<pre class="fragment"><code style="padding: .5em 1em;" class="language-python" data-line-numbers="1">print(dir(network))  # Tip: List object attributes
 </code></pre>
-
-<div>
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="blue_overlay yellow_flag logo" data-background="./files/broom-6310388_1280.jpg" -->
 ## Find Bugs
 
 <div>

@@ -1,10 +1,11 @@
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="black_overlay yellow_flag logo" id="functions" data-background="./files/board-4855963_1280.jpg" -->
+<!-- https://pixabay.com/photos/board-mathematics-school-to-learn-4855963/ -->
 # Functions
 Reuse code for readability and robustness
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-auto-animate data-background="./files/board-4855963_1280.jpg" -->
 
 ## Code to Functions
 
@@ -17,7 +18,7 @@ bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-auto-animate data-background="./files/board-4855963_1280.jpg" -->
 
 ## Code to Functions
 
@@ -33,7 +34,7 @@ bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-auto-animate data-background="./files/board-4855963_1280.jpg" -->
 
 ## Code to Functions
 
@@ -49,7 +50,7 @@ bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-auto-animate data-background="./files/board-4855963_1280.jpg" -->
 
 ## Code to Functions
 
@@ -65,7 +66,7 @@ bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-auto-animate data-background="./files/board-4855963_1280.jpg" -->
 
 ## Code to Functions
 
@@ -81,7 +82,7 @@ bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-auto-animate data-background="./files/board-4855963_1280.jpg" -->
 
 ## Code to Functions
 
@@ -97,7 +98,7 @@ bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-auto-animate data-background="./files/board-4855963_1280.jpg" -->
 
 ## Code to Functions
 
@@ -114,7 +115,7 @@ bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-auto-animate data-background="./files/board-4855963_1280.jpg" -->
 
 ## Code to Functions
 
@@ -131,7 +132,7 @@ bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/board-4855963_1280.jpg" -->
 
 ## Create a Function
 

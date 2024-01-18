@@ -1,9 +1,10 @@
-<!-- .slide: data-state="standard" -->
+<!-- .slide: id="environments" data-state="black_overlay 7 yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
+<!-- https://pixabay.com/photos/augmented-reality-bicycle-girl-bike-1853592/ -->
 # Code Environments
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="standard" data-state="black_overlay yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
 ## Environment Definition
 
 So you've got the code file. Now what...?
@@ -22,7 +23,7 @@ So you've got the code file. Now what...?
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="standard" data-state="black_overlay yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
 ## Encapsulation
 
 Say you install `pypsa` on your system. What if you need a different `pypsa` version for a different project?
@@ -32,7 +33,7 @@ Can we create separate environments for different projects?
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="standard" data-state="black_overlay yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
 ## Python Environments
 
 <div style="width: 29%; float: left; margin-left: 15%;">
@@ -53,7 +54,7 @@ Can we create separate environments for different projects?
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="standard" data-state="black_overlay yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
 ## Create a Library File
 
 <pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash"># requirements.txt
@@ -74,7 +75,7 @@ pypsa
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="standard" data-state="black_overlay yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
 ## Virtual Environment
 
 <pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash" data-line-numbers>$ python -m venv .venv
@@ -94,7 +95,7 @@ $ pip install -r requirements.txt
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="standard" data-state="black_overlay yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
 ## Pinning Libraries
 
 If your code runs, find out your libraries- and Python versions.

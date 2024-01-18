@@ -1,9 +1,10 @@
-<!-- .slide: data-state="standard" -->
+<!-- .slide: id="problem" data-state="white_overlay yellow_flag logo" data-background="./files/wires-7997980_1280.jpg" -->
+<!-- https://pixabay.com/photos/wires-electrical-current-electricity-7997980/ -->
 # Setting
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="white_overlay 9 yellow_flag logo" data-background="./files/wires-7997980_1280.jpg" -->
 ## Power Grid Simulation
 
 Your colleague Sam has written a simulation of a power grid:
@@ -18,7 +19,7 @@ They want to analyze how changing reactive power of the load <span style="color:
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="white_overlay 9 yellow_flag logo" data-background="./files/wires-7997980_1280.jpg" -->
 ## Flashback: Physics
 
 ![Phase Shift](./files/Phase_shift.svg)
@@ -31,7 +32,7 @@ Adapted, from [commons.wikimedia.org/wiki/File:Phase_shift.svg](https://commons.
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="white_overlay 9 yellow_flag logo" data-background="./files/wires-7997980_1280.jpg" -->
 ## Problem
 
 Sam's code does not scale well. There might be bugs. They know you have been following the ESI-far workshop and ask you to refactor their code.

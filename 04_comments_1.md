@@ -1,4 +1,6 @@
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="purple_overlay 7 yellow_flag logo" id="comments_1" data-background="./files/paper-623167_1280.jpg" -->
+<!-- https://pixabay.com/photos/paper-writing-old-antique-write-623167/ -->
+
 # # Comments [1/2]
 
 <div class="fragment">
@@ -9,7 +11,7 @@
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-background="./files/paper-623167_1280.jpg" -->
 ## Improvements
 
 <img style="width: 3em; margin: 0; padding: 1em 1em; float: left;" src="./files/hacker-cat.png">
@@ -24,7 +26,7 @@
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-auto-animate data-background="./files/paper-623167_1280.jpg" -->
 ## Understanding the Code
 
 <pre data-id="comments_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>network.add("Bus", "My bus 2", v_nom=20.0)
@@ -35,7 +37,7 @@ network.add("Load", "Factory", bus="My bus 1", p_set=70, q_set=0)
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-auto-animate data-background="./files/paper-623167_1280.jpg" -->
 ## Understanding the Code
 
 <pre data-id="comments_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers="1-5|6-13|14-20|21-27">network.add(
@@ -69,14 +71,14 @@ network.add(
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-background="./files/paper-623167_1280.jpg" -->
 ## Less Comments Are Better
 
 Wait, what?
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-auto-animate data-background="./files/paper-623167_1280.jpg" -->
 ## Verbose Variable Names
 
 <pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># bus load angles
@@ -87,7 +89,7 @@ bla_2 = []
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-auto-animate data-background="./files/paper-623167_1280.jpg" -->
 ## Verbose Variable Names
 
 <pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># bus load angles
@@ -98,7 +100,7 @@ bla_2 = []
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-auto-animate data-background="./files/paper-623167_1280.jpg" -->
 ## Verbose Variable Names
 
 <pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># bus load angles
@@ -109,7 +111,7 @@ bla_2 = []
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-auto-animate data-background="./files/paper-623167_1280.jpg" -->
 ## Verbose Variable Names
 
 <pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># bus load angles
@@ -120,7 +122,7 @@ bus_2_load_angles = []
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-auto-animate data-background="./files/paper-623167_1280.jpg" -->
 ## Verbose Variable Names
 
 <pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>bus_0_load_angles = []
@@ -130,7 +132,7 @@ bus_2_load_angles = []
 
 ---
 
-<!-- .slide: data-state="standard" data-auto-animate -->
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-auto-animate data-background="./files/paper-623167_1280.jpg" -->
 ## Verbose Variable Names
 
 <pre data-id="var_names_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>bus_0_load_angles = []

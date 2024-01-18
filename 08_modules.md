@@ -1,15 +1,15 @@
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="blue_overlay yellow_flag logo" id="modules" data-background="./files/memory-4813085_1280.jpg" -->
+<!-- https://pixabay.com/photos/memory-ram-computer-technology-4813085/ -->
 # Modules
 Reusable functions and layers of abstractions
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/memory-4813085_1280.jpg" -->
 
 ## Yet Another File
 
 <pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># conversion.py
-
 import numpy as np
 
 def radians_to_degrees(radians):
@@ -32,17 +32,20 @@ degrees = conv.radians_to_degrees(0.5)
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/memory-4813085_1280.jpg" -->
 
 ## Python, Help!
+
+Python's built-in `help` function gives useful context for modules and functions. Certain editors make use of this, too!
 
 <pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>$ python
 >>> import conversions as conv
 >>> help(conv.radians_to_degrees)
 radians_to_degrees()
-</code></pre>
 
-<br>
+>>> help(conv.radians_to_degrees)
+[...]
+</code></pre>
 
 <div class="fragment">
   Huh. Well that's not very useful. 🤷‍♀️

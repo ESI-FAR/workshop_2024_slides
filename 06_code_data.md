@@ -1,10 +1,12 @@
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="white_overlay 8 yellow_flag logo" id="split" data-background="./files/code_data.jpg" -->
+<!-- https://pixabay.com/photos/coding-computer-hacker-hacking-1841550/ -->
+<!-- https://pixabay.com/photos/files-paper-office-paperwork-stack-1614223/ -->
 <h1 style="transform: translate(-30%, -20%);">Split Code</h1>
 <h1 style="transform: translate(30%, 20%);">And Data</h1>
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="white_overlay 9 yellow_flag logo" data-background="./files/code_data.jpg" -->
 ## Code? Data? Parameters?
 
 Imagine you want to change simulation parameters. All resistances of 0.1 Ohm shall be replaced by 1 Ohm.
@@ -19,7 +21,7 @@ r_2 = 0.1
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="white_overlay 9 yellow_flag logo" data-background="./files/code_data.jpg" -->
 ## Config File
 
 <pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># config.py
@@ -45,7 +47,7 @@ r_2 = config.reactance
 
 ---
 
-<!-- .slide: data-state="standard" -->
+<!-- .slide: data-state="white_overlay 9 yellow_flag logo" data-background="./files/code_data.jpg" -->
 ## Benefits
 
 - Self-documenting
