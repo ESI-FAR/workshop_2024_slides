@@ -2,6 +2,10 @@
 <!-- https://pixabay.com/photos/laboratory-apparatus-equipment-217041/ -->
 # Testing
 
+Just because code runs, does not mean it's correct...
+
+<span class="fragment">Also, fearless refactoring, here we go!</span>
+
 ---
 
 <!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" -->

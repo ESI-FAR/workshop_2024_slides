@@ -2,13 +2,17 @@
 <!-- https://pixabay.com/photos/checklist-goals-box-notebook-pen-2589418/ -->
 ## Table of Contents
 
-1. [Problem](#/problem)
-2. [Virtual Environment](#/environments)
-3. [Comments 1/2](#/comments_1)
-4. [Debugging](#/debugging)
-5. [Splitting Code and Data](#/split)
-6. [Functions](#/functions)
-7. [Modules](#/modules)
-8. [Comments 2/2](#/comments_2)
-9. [Type Hinting](#/type_hinting)
-10. [Testing](#/testing)
+<ol>
+  <li><a href="#/problem">Problem</a></li>
+  <li><a href="#/environments">Virtual Environment</a></li>
+  <li><a href="#/comments_1">Comments 1/2</a></li>
+  <li><a href="#/debugging">Debugging</a></li>
+  <li><a href="#/split">Splitting Code and Data</a></li>
+  <li><a href="#/functions">Functions</a></li>
+  <li><a href="#/modules">Modules</a></li>
+  <li><a href="#/comments_2">Comments 2/2</a></li>
+  <li><a href="#/type_hinting">Type Hinting</a></li>
+  <li><a href="#/testing">Testing</a></li>
+  <li class="fragment"><a href="#/formatting">Bonus: Formatting</a></li>
+</ol>
+

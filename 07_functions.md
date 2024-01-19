@@ -11,9 +11,9 @@ Reuse code for readability and robustness
 
 Are there repeating sections of code that could be a function?
 
-<pre data-id="functions_1" class="fragment"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>bla_0.append([...][f"My bus 0"].iloc[0] * 180 / np.pi)
-bla_1.append([...][f"My bus 1"].iloc[0] * 180 / np.pi)
-bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
+<pre data-id="functions_1" class="fragment"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>bla_0.append([...][f"My bus 0"].iloc[0] / 180 * np.pi)
+bla_1.append([...][f"My bus 1"].iloc[0] / 180 * np.pi)
+bla_2.append([...][f"My bus 2"].iloc[0] / 18 * np.pi)
 </code></pre>
 
 ---
@@ -25,11 +25,11 @@ bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
 Are there repeating sections of code that could be a function?
 
 <pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
-    return radians * 180 / np.pi
+    return radians / 180 * np.pi
 
-bla_0.append([...][f"My bus 0"].iloc[0] * 180 / np.pi)
-bla_1.append([...][f"My bus 1"].iloc[0] * 180 / np.pi)
-bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
+bla_0.append([...][f"My bus 0"].iloc[0] / 180 * np.pi)
+bla_1.append([...][f"My bus 1"].iloc[0] / 180 * np.pi)
+bla_2.append([...][f"My bus 2"].iloc[0] / 18 * np.pi)
 </code></pre>
 
 ---
@@ -41,11 +41,11 @@ bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
 Are there repeating sections of code that could be a function?
 
 <pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
-    return radians * 180 / np.pi
+    return radians / 180 * np.pi
 
 bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
-bla_1.append([...][f"My bus 1"].iloc[0] * 180 / np.pi)
-bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
+bla_1.append([...][f"My bus 1"].iloc[0] / 180 * np.pi)
+bla_2.append([...][f"My bus 2"].iloc[0] / 18 * np.pi)
 </code></pre>
 
 ---
@@ -57,27 +57,11 @@ bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
 Are there repeating sections of code that could be a function?
 
 <pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
-    return radians * 180 / np.pi
-
-bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
-bla_1.append(radians_to_degrees([...][f"My bus 1"].iloc[0]))
-bla_2.append([...][f"My bus 2"].iloc[0] * 18 / np.pi)
-</code></pre>
-
----
-
-<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-auto-animate data-background="./files/board-4855963_1280.jpg" -->
-
-## Code to Functions
-
-Are there repeating sections of code that could be a function?
-
-<pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
-    return radians * 180 / np.pi
+    return radians / 180 * np.pi
 
 bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
 bla_1.append(radians_to_degrees([...][f"My bus 1"].iloc[0]))
-bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
+bla_2.append([...][f"My bus 2"].iloc[0] / 18 * np.pi)
 </code></pre>
 
 ---
@@ -89,7 +73,7 @@ bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
 Are there repeating sections of code that could be a function?
 
 <pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
-    return radians * 180 / np.pi  # in degrees
+    return radians / 180 * np.pi
 
 bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
 bla_1.append(radians_to_degrees([...][f"My bus 1"].iloc[0]))
@@ -105,7 +89,23 @@ bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
 Are there repeating sections of code that could be a function?
 
 <pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
-    degrees = radians * 180 / np.pi
+    return radians / 180 * np.pi  # in degrees
+
+bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
+bla_1.append(radians_to_degrees([...][f"My bus 1"].iloc[0]))
+bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
+</code></pre>
+
+---
+
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-auto-animate data-background="./files/board-4855963_1280.jpg" -->
+
+## Code to Functions
+
+Are there repeating sections of code that could be a function?
+
+<pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
+    degrees = radians / 180 * np.pi
     return degrees
 
 bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
@@ -122,7 +122,7 @@ bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
 Are there repeating sections of code that could be a function?
 
 <pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
-    degrees = radians * 360 / (2 * np.pi)
+    degrees = radians / 360 * (2 * np.pi)
     return degrees
 
 bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
@@ -137,7 +137,7 @@ bla_2.append(radians_to_degrees([...][f"My bus 2"].iloc[0]))
 ## Create a Function
 
 <pre data-id="functions_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def radians_to_degrees(radians):
-    degrees = radians * 360 / (2 * np.pi)
+    degrees = radians / 360 * (2 * np.pi)
     return degrees
 
 bla_0.append(radians_to_degrees([...][f"My bus 0"].iloc[0]))
