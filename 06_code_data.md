@@ -1,13 +1,17 @@
 <!-- .slide: data-state="white_overlay 8 yellow_flag logo" id="split" data-background="./files/code_data.jpg" -->
 <!-- https://pixabay.com/photos/coding-computer-hacker-hacking-1841550/ -->
 <!-- https://pixabay.com/photos/files-paper-office-paperwork-stack-1614223/ -->
-<h1 style="transform: translate(-30%, -20%);">Split Code</h1>
-<h1 style="transform: translate(30%, 20%);">And Data</h1>
+<h1 style="transform: translate(-15vw, 15vh);">Split Code,</h1>
+<div style="transform: translate(15vw, 30vh);">
+    <h1>Configuration<span class="fragment" data-fragment-index="1">,</span></h1>
+    <h1 class="fragment" data-fragment-index="1">And Data</h1>
+</div>
+
 
 ---
 
 <!-- .slide: data-state="white_overlay 9 yellow_flag logo" data-background="./files/code_data.jpg" -->
-## Code? Data? Parameters?
+## Code? Data? Config? Parameters?
 
 Imagine you want to change simulation parameters. All resistances of 0.1 Ohm shall be replaced by 1 Ohm.
 
@@ -41,7 +45,7 @@ r_2 = config.reactance
 <div class="fragment">
   <img style="width: 2em; margin: 0; padding: 0em 0em 0em 10%; float: left;" src="./files/hacker-cat.png">
   <div style="float: left; width: 70%; padding-top: .25em;">
-    Create a config file to split code and data.
+    Create a config file to split code and configuration.
   </div>
 </div>
 
@@ -50,6 +54,6 @@ r_2 = config.reactance
 <!-- .slide: data-state="white_overlay 9 yellow_flag logo" data-background="./files/code_data.jpg" -->
 ## Benefits
 
-- Self-documenting
-- Change parameters without changing script
-- Store `config.py` with your results for reproducibility
+- Facilitate self-documentation
+- Change parameters without changing the script
+- Reproducibility: store `config.py` with your results
