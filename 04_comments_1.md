@@ -148,3 +148,65 @@ bus_2_load_angles = []
     Replace incomprehensible variable names with good ones.
   </div>
 </div>
+
+---
+
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-auto-animate data-background="./files/paper-623167_1280.jpg" -->
+## Improve Output
+
+<pre data-id="plotting_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>fig, ax = plt.subplots()
+
+ax.plot(list(range(0, 1000, 50)), bla_0, label=f"Bus 0")
+ax.plot(list(range(0, 1000, 50)), bla_1, label=f"Bus 1")
+ax.plot(list(range(0, 1000, 50)), bla_2, label=f"Bus 2")
+
+ax.legend()
+
+plt.show()
+</code></pre>
+
+---
+
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-auto-animate data-background="./files/paper-623167_1280.jpg" -->
+## Improve Output
+
+<pre data-id="plotting_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>fig, ax = plt.subplots()
+
+ax.plot(list(range(0, 1000, 50)), bla_0, label=f"Bus 0")
+ax.plot(list(range(0, 1000, 50)), bla_1, label=f"Bus 1")
+ax.plot(list(range(0, 1000, 50)), bla_2, label=f"Bus 2")
+
+ax.legend()
+
+plt.title("Reactive Load Angles")
+
+plt.show()
+</code></pre>
+
+---
+
+<!-- .slide: data-state="purple_overlay yellow_flag logo" data-auto-animate data-background="./files/paper-623167_1280.jpg" -->
+## Improve Output
+
+<pre data-id="plotting_1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>fig, ax = plt.subplots()
+
+ax.plot(list(range(0, 1000, 50)), bla_0, label=f"Bus 0")
+ax.plot(list(range(0, 1000, 50)), bla_1, label=f"Bus 1")
+ax.plot(list(range(0, 1000, 50)), bla_2, label=f"Bus 2")
+
+ax.legend()
+
+plt.title("Reactive Load Angles")
+
+ax.set_xlabel("Reactive power consumption 'Factory' [MVar]")
+ax.set_ylabel("Reactive load angle [°]")
+
+plt.show()
+</code></pre>
+
+<div class="fragment">
+  <img style="width: 3em; margin: 0; padding: 0em 1em 0em 30%; float: left;" src="./files/hacker-cat.png">
+  <div style="float: left; width: 25%; padding-top: .75em;">
+    Label your plot.
+  </div>
+</div>
