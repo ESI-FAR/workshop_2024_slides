@@ -49,13 +49,13 @@ Can we create separate environments for different projects?
 
 <div style="width: 49%; float: right; margin-right: 5%;" class="fragment">
 ☯ Zen of Python ☯
-<blockquote><b>Rule 13</b> <br> There should be one - and preferably only one - obvious way to do it. </blockquote>
+<blockquote><b>Line 13</b> <br> There should be one - and preferably only one - obvious way to do it. </blockquote>
 </div>
 
 ---
 
 <!-- .slide: data-state="standard" data-state="black_overlay yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
-## Create a Library File
+## Create a Requirements File
 
 <pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash"># requirements.txt
 black
@@ -69,7 +69,7 @@ pypsa
 <div class="fragment">
     <img style="width: 3em; margin: 0; padding: 0 2em; float: left;" src="./files/hacker-cat.png">
     <div style="float: left; width: 50%;">
-        Create a <code>requirements.txt</code> file containing all the libraries we use.
+        Create a <code>requirements.txt</code> file containing all the requirements (libraries) we use.
     </div>
 </div>
 
@@ -78,10 +78,21 @@ pypsa
 <!-- .slide: data-state="standard" data-state="black_overlay yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
 ## Virtual Environment
 
+<div style="width: max-content; float: left; padding-bottom: 1em;">
+<h3>Linux</h3>
 <pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash" data-line-numbers>$ python -m venv .venv
 $ source .venv/bin/activate
 $ pip install -r requirements.txt
 </code></pre>
+</div>
+
+<div style="width: max-content; float: right; padding-bottom: 1em;">
+<h3>Windows</h3>
+<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash" data-line-numbers>$ python -m venv .venv
+$ source .venv/Scripts/activate
+$ pip install -r requirements.txt
+</code></pre>
+</div>
 
 <br>
 
@@ -96,7 +107,7 @@ $ pip install -r requirements.txt
 ---
 
 <!-- .slide: data-state="standard" data-state="black_overlay yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
-## Pinning Libraries
+## Pinning Requirements
 
 If your code runs, find out your libraries- and Python versions.
 
@@ -115,7 +126,7 @@ Python 3.10.13
 <div class="fragment">
   <img style="width: 3em; margin: 0; padding: .5em 2em; float: left;" src="./files/hacker-cat.png">
   <div style="float: left; width: 70%;">
-    Update the <code>requirements.txt</code> file with pinned libraries. Mention the Python version in the <code>README.md</code> file.
+    Update the <code>requirements.txt</code> file with pinned requirements. Mention the Python version in the <code>README.md</code> file.
   </div>
 
 </div>
