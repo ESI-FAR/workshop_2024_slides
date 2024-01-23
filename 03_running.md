@@ -111,23 +111,30 @@ $ pip install -r requirements.txt
 
 If your code runs, find out your libraries- and Python versions.
 
+<div style="float: left; width: 49%;">
 <pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash">$ pip freeze
 attrs==23.2.0
 blosc2==2.4.0
 Bottleneck==1.3.7
 certifi==2023.11.17
-[...]
+[...]                          
 </code></pre>
 
 <pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash">$ python --version 
-Python 3.10.13
+Python 3.10.13                 
 </code></pre>
 
-<div class="fragment">
-  <img style="width: 3em; margin: 0; padding: .5em 2em; float: left;" src="./files/hacker-cat.png">
-  <div style="float: left; width: 70%;">
-    Update the <code>requirements.txt</code> file with pinned requirements. Mention the Python version in the <code>README.md</code> file.
-  </div>
-
+<pre style="width: max-content;" class="fragment" data-fragment-index="2"><code style="padding: .5em 1em;" class="language-bash"># Tip!
+$ pip freeze > requirements.txt
+</code></pre>
 </div>
 
+<div style="float: right; width: 49%;" class="fragment" data-fragment-index="1">
+  <img style="width: 3em; margin: 0 auto; padding: 0em;" src="./files/hacker-cat.png">
+  <div>
+  <ul>
+    <li>Update the <code>requirements.txt</code> file with pinned requirements.</li>
+    <li>Mention the Python version in the <code>README.md</code> file.</li>
+  </ul>
+  </div>
+</div>
