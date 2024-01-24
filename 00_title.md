@@ -1,6 +1,6 @@
 <!--
 title: Best Practices in Software Development
-description: Refactor an Electricity Grid Simulation Script
+description: Refactoring an Electricity Grid Simulation Script
 author: Ole Mussmann
 version: 4.3.1
 plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, RevealMenu, RevealNotes, RevealSearch, RevealZoom
