@@ -14,6 +14,7 @@
 <!-- .slide: data-state="purple_overlay yellow_flag logo" data-background="./files/paper-623167_1280.jpg" -->
 ## Improvements
 
+<div>
 <img style="width: 3em; margin: 0; padding: 1em 1em; float: left;" src="./files/hacker-cat.png">
 <div style="float: left; width: 75%;">
 
@@ -21,7 +22,13 @@
 - Ask questions and understand every variable.
 - Add comments for comprehension.
 
+</div>
+</div>
+
+<div class="fragment" style="width: 100%; float: left;">
 <b>More comments are better!</b>
+<br>
+<b class="fragment">Or are they? 🤔</b>
 </div>
 
 ---
@@ -68,6 +75,8 @@ network.add(
     q_set=0  # Reactive Power Setpoint
 )
 </code></pre>
+
+💡 More comments are not the goal, but an in-between step.
 
 ---
 
