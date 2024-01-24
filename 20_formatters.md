@@ -1,6 +1,6 @@
 <!-- .slide: data-state="black_overlay 7 yellow_flag logo" id="formatting" data-background="./files/vehicle-3090246_1280.jpg" -->
 <!-- https://pixabay.com/photos/vehicle-car-transportation-vintage-3090246/ -->
-# Bonus: Formatting
+# Formatting
 
 <blockquote>
 Any color the customer wants,<br>as long as it's black.

@@ -112,6 +112,7 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
   <li><a href="#/problem">Problem</a></li>
   <li><a href="#/environments">Virtual Environment</a></li>
   <li><a href="#/comments_1">Comments 1/2</a></li>
+  <li><a href="#/formatting">Formatting</a></li>
   <li><a href="#/debugging">Debugging</a></li>
   <li><a href="#/split">Splitting Code and Data</a></li>
   <li><a href="#/functions">Functions</a></li>
@@ -119,15 +120,14 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
   <li><a href="#/comments_2">Comments 2/2</a></li>
   <li><a href="#/type_hinting">Type Hinting</a></li>
   <li><a href="#/testing">Testing</a></li>
-  <li class="fragment"><a href="#/formatting">Bonus: Formatting</a></li>
 </ol>
 
 
 </section>
-<section data-markdown="02_problem.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<section data-markdown="05_problem.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
 <!-- .slide: id="problem" data-state="white_overlay yellow_flag logo" data-background="./files/wires-7997980_1280.jpg" -->
 <!-- https://pixabay.com/photos/wires-electrical-current-electricity-7997980/ -->
-# Setting
+# Problem
 
 ---
 
@@ -165,7 +165,7 @@ Adapted, from [commons.wikimedia.org/wiki/File:Phase_shift.svg](https://commons.
 Sam's code does not scale well. There might be bugs. They know you have been following the ESI-far workshop and ask you to refactor their code.
 
 </section>
-<section data-markdown="03_running.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<section data-markdown="10_running.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
 <!-- .slide: id="environments" data-state="black_overlay 7 yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
 <!-- https://pixabay.com/photos/augmented-reality-bicycle-girl-bike-1853592/ -->
 # Code Environments
@@ -232,14 +232,20 @@ numpy
 pypsa
 </code></pre>
 
-<br>
-
 <div class="fragment">
-    <img style="width: 3em; margin: 0; padding: 0 2em; float: left;" src="./files/hacker-cat.png">
-    <div style="float: left; width: 50%;">
-        Create a <code>requirements.txt</code> file containing all the requirements (libraries) we use.
+    <img style="width: 3em; margin: 0; padding: .5em 1em; float: left;" src="./files/hacker-cat.png">
+    <div style="float: left; width: 80%;">
+      <ul>
+        <li>Create a <code>requirements.txt</code> file containing the requirements (libraries) we use.</li>
+        <li>Mention the Python version in <code>README.md</code>.</li>
+      </ul>
     </div>
 </div>
+
+<footer>
+What about the library versions?<br>
+<a href="https://stackoverflow.com/questions/28509481/should-i-pin-my-python-dependencies-versions">Should I pin dependencies?</a> / <a href="https://www.codyhiar.com/blog/tips-for-pinning-python-requirements-files/">Tips for pinning</a>
+</footer>
 
 ---
 
@@ -271,44 +277,8 @@ $ pip install -r requirements.txt
     </div>
 </div>
 
-
----
-
-<!-- .slide: data-state="standard" data-state="black_overlay yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
-## Pinning Requirements
-
-If your code runs, find out your libraries- and Python versions.
-
-<div style="float: left; width: 49%;">
-<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash">$ pip freeze
-attrs==23.2.0
-blosc2==2.4.0
-Bottleneck==1.3.7
-certifi==2023.11.17
-[...]                          
-</code></pre>
-
-<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash">$ python --version 
-Python 3.10.13                 
-</code></pre>
-
-<pre style="width: max-content;" class="fragment" data-fragment-index="2"><code style="padding: .5em 1em;" class="language-bash"># Tip!
-$ pip freeze > requirements.txt
-</code></pre>
-</div>
-
-<div style="float: right; width: 49%;" class="fragment" data-fragment-index="1">
-  <img style="width: 3em; margin: 0 auto; padding: 0em;" src="./files/hacker-cat.png">
-  <div>
-  <ul>
-    <li>Update the <code>requirements.txt</code> file with pinned requirements.</li>
-    <li>Mention the Python version in the <code>README.md</code> file.</li>
-  </ul>
-  </div>
-</div>
-
 </section>
-<section data-markdown="04_comments_1.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<section data-markdown="15_comments_1.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
 <!-- .slide: data-state="purple_overlay 7 yellow_flag logo" id="comments_1" data-background="./files/paper-623167_1280.jpg" -->
 <!-- https://pixabay.com/photos/paper-writing-old-antique-write-623167/ -->
 
@@ -523,7 +493,128 @@ plt.show()
 </div>
 
 </section>
-<section data-markdown="05_debugging.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<section data-markdown="20_formatters.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<!-- .slide: data-state="black_overlay 7 yellow_flag logo" id="formatting" data-background="./files/vehicle-3090246_1280.jpg" -->
+<!-- https://pixabay.com/photos/vehicle-car-transportation-vintage-3090246/ -->
+# Formatting
+
+<blockquote>
+Any color the customer wants,<br>as long as it's black.
+<div style="text-align: right; padding-top: 1em;">- Henry Ford (supposedly)</div>
+</blockquote>
+
+---
+
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" -->
+
+## Style Conventions
+
+- How many newlines between functions?
+- Whitespace around operators?
+- Max linewidth?
+
+<span class="fragment"><em>Argue! Fight! Throw cake at each other!</em></span>
+
+---
+
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" -->
+
+## Choices
+
+- AutoPEP8
+- Black
+- Ruff
+- ...
+
+Just like with docstring styles, choose one and stick to it.
+
+---
+
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" data-auto-animate -->
+
+## Demo
+
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
+j = [1,
+     2,
+     3
+]
+
+ImportantClass.important_method(exc, limit, lookup_lines, capture_locals, extra_argument)
+</code></pre>
+
+---
+
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" data-auto-animate -->
+
+## Demo
+
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
+j = [1,
+     2,
+     3
+]
+
+ImportantClass.important_method(exc, limit, lookup_lines, capture_locals, extra_argument)
+</code></pre>
+
+<pre data-id="run_black_1"><code style="padding: .5em 1em;" class="language-python">$ black script.py
+</code></pre>
+
+---
+
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" data-auto-animate -->
+
+## Demo
+
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
+j = [1,
+     2,
+     3
+]
+
+ImportantClass.important_method(exc, limit, lookup_lines, capture_locals, extra_argument)
+</code></pre>
+
+<pre data-id="run_black_1"><code style="padding: .5em 1em;" class="language-python">$ black script.py
+reformatted script.py
+
+All done! ✨ 🍰 ✨
+1 file reformatted.
+</code></pre>
+
+---
+
+<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" data-auto-animate -->
+
+## Demo
+
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
+j = [1,
+     2,
+     3
+]
+
+ImportantClass.important_method(exc, limit, lookup_lines, capture_locals, extra_argument)
+</code></pre>
+
+<pre><code style="padding: .5em 1em;" class="language-python">$ black script.py
+reformatted script.py
+
+All done! ✨ 🍰 ✨
+1 file reformatted.
+</code></pre>
+
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
+j = [1, 2, 3]
+
+ImportantClass.important_method(
+    exc, limit, lookup_lines, capture_locals, extra_argument
+)
+</code></pre>
+
+</section>
+<section data-markdown="25_debugging.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
 <!-- .slide: data-state="blue_overlay 7 yellow_flag logo" id="debugging" data-background="./files/broom-6310388_1280.jpg" -->
 <!-- https://pixabay.com/photos/broom-cleaning-sweep-outdoors-6310388/ -->
 # Debugging 🐞
@@ -673,7 +764,7 @@ network.add(
 </div>
 
 </section>
-<section data-markdown="06_code_data.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<section data-markdown="30_code_data.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
 <!-- .slide: data-state="white_overlay 8 yellow_flag logo" id="split" data-background="./files/code_data.jpg" -->
 <!-- https://pixabay.com/photos/coding-computer-hacker-hacking-1841550/ -->
 <!-- https://pixabay.com/photos/files-paper-office-paperwork-stack-1614223/ -->
@@ -735,7 +826,7 @@ r_2 = config.reactance
 - Reproducibility: store `config.py` with your results
 
 </section>
-<section data-markdown="07_functions.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<section data-markdown="35_functions.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
 <!-- .slide: data-state="black_overlay yellow_flag logo" id="functions" data-background="./files/board-4855963_1280.jpg" -->
 <!-- https://pixabay.com/photos/board-mathematics-school-to-learn-4855963/ -->
 # Functions
@@ -896,7 +987,7 @@ Hey, that's useful! Could we use this in other projects too? 🤔
 <div>
 
 </section>
-<section data-markdown="08_modules.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<section data-markdown="40_modules.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
 <!-- .slide: data-state="blue_overlay yellow_flag logo" id="modules" data-background="./files/memory-4813085_1280.jpg" -->
 <!-- https://pixabay.com/photos/memory-ram-computer-technology-4813085/ -->
 # Modules
@@ -951,7 +1042,7 @@ radians_to_degrees()
 </div>
 
 </section>
-<section data-markdown="09_comments_2.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<section data-markdown="45_comments_2.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
 <!-- .slide: data-state="purple_overlay yellow_flag logo" id="comments_2" data-background="./files/paper-623167_1280.jpg" -->
 <!-- https://pixabay.com/photos/paper-writing-old-antique-write-623167/ -->
 # # Comments [2/2]
@@ -1195,7 +1286,7 @@ def radians_to_degrees(radians):
 
 
 </section>
-<section data-markdown="10_type_hinting.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<section data-markdown="50_type_hinting.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
 <!-- .slide: data-state="white_overlay 6 yellow_flag logo" id="type_hinting" data-background="./files/man-5888558_1280.jpg" -->
 <!-- https://pixabay.com/photos/man-pointing-gesture-hand-gesture-5888558/ -->
 # Type Hinting
@@ -1299,7 +1390,7 @@ def my_func(arg_one: TYPE, arg_two: TYPE = value) -> RETURN_TYPE:
 </div>
 
 </section>
-<section data-markdown="11_testing.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<section data-markdown="55_testing.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
 <!-- .slide: data-state="blue_overlay 6 yellow_flag logo" id="testing" data-background="./files/laboratory-217041_1280.jpg" -->
 <!-- https://pixabay.com/photos/laboratory-apparatus-equipment-217041/ -->
 # Testing
@@ -1524,131 +1615,10 @@ if __name__ == "__main__":
 </div>
 
 </section>
-<section data-markdown="12_questions.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
+<section data-markdown="60_questions.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
 <!-- .slide: data-state="black_overlay 3 yellow_flag logo" id="questions" data-background="./files/question-mark-2492009_1280.jpg" -->
 <!-- https://pixabay.com/illustrations/question-mark-pile-questions-symbol-2492009/ -->
 # Questions?
-
-</section>
-<section data-markdown="13_formatters.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
-<!-- .slide: data-state="black_overlay 7 yellow_flag logo" id="formatting" data-background="./files/vehicle-3090246_1280.jpg" -->
-<!-- https://pixabay.com/photos/vehicle-car-transportation-vintage-3090246/ -->
-# Bonus: Formatting
-
-<blockquote>
-Any color the customer wants,<br>as long as it's black.
-<div style="text-align: right; padding-top: 1em;">- Henry Ford (supposedly)</div>
-</blockquote>
-
----
-
-<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" -->
-
-## Style Conventions
-
-- How many newlines between functions?
-- Whitespace around operators?
-- Max linewidth?
-
-<span class="fragment"><em>Argue! Fight! Throw cake at each other!</em></span>
-
----
-
-<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" -->
-
-## Choices
-
-- AutoPEP8
-- Black
-- Ruff
-- ...
-
-Just like with docstring styles, choose one and stick to it.
-
----
-
-<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" data-auto-animate -->
-
-## Demo
-
-<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
-j = [1,
-     2,
-     3
-]
-
-ImportantClass.important_method(exc, limit, lookup_lines, capture_locals, extra_argument)
-</code></pre>
-
----
-
-<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" data-auto-animate -->
-
-## Demo
-
-<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
-j = [1,
-     2,
-     3
-]
-
-ImportantClass.important_method(exc, limit, lookup_lines, capture_locals, extra_argument)
-</code></pre>
-
-<pre data-id="run_black_1"><code style="padding: .5em 1em;" class="language-python">$ black script.py
-</code></pre>
-
----
-
-<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" data-auto-animate -->
-
-## Demo
-
-<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
-j = [1,
-     2,
-     3
-]
-
-ImportantClass.important_method(exc, limit, lookup_lines, capture_locals, extra_argument)
-</code></pre>
-
-<pre data-id="run_black_1"><code style="padding: .5em 1em;" class="language-python">$ black script.py
-reformatted script.py
-
-All done! ✨ 🍰 ✨
-1 file reformatted.
-</code></pre>
-
----
-
-<!-- .slide: data-state="black_overlay 9 yellow_flag logo" data-background="./files/vehicle-3090246_1280.jpg" data-auto-animate -->
-
-## Demo
-
-<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
-j = [1,
-     2,
-     3
-]
-
-ImportantClass.important_method(exc, limit, lookup_lines, capture_locals, extra_argument)
-</code></pre>
-
-<pre><code style="padding: .5em 1em;" class="language-python">$ black script.py
-reformatted script.py
-
-All done! ✨ 🍰 ✨
-1 file reformatted.
-</code></pre>
-
-<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># script.py
-j = [1, 2, 3]
-
-ImportantClass.important_method(
-    exc, limit, lookup_lines, capture_locals, extra_argument
-)
-</code></pre>
 
 </section>
 

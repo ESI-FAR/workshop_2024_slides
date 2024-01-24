@@ -64,14 +64,20 @@ numpy
 pypsa
 </code></pre>
 
-<br>
-
 <div class="fragment">
-    <img style="width: 3em; margin: 0; padding: 0 2em; float: left;" src="./files/hacker-cat.png">
-    <div style="float: left; width: 50%;">
-        Create a <code>requirements.txt</code> file containing all the requirements (libraries) we use.
+    <img style="width: 3em; margin: 0; padding: .5em 1em; float: left;" src="./files/hacker-cat.png">
+    <div style="float: left; width: 80%;">
+      <ul>
+        <li>Create a <code>requirements.txt</code> file containing the requirements (libraries) we use.</li>
+        <li>Mention the Python version in <code>README.md</code>.</li>
+      </ul>
     </div>
 </div>
+
+<footer>
+What about the library versions?<br>
+<a href="https://stackoverflow.com/questions/28509481/should-i-pin-my-python-dependencies-versions">Should I pin dependencies?</a> / <a href="https://www.codyhiar.com/blog/tips-for-pinning-python-requirements-files/">Tips for pinning</a>
+</footer>
 
 ---
 
@@ -101,40 +107,4 @@ $ pip install -r requirements.txt
     <div style="float: left; width: 50%;">
         Create a virtual environment and install libraries.
     </div>
-</div>
-
-
----
-
-<!-- .slide: data-state="standard" data-state="black_overlay yellow_flag logo" data-background="./files/augmented-reality-1853592_1280.jpg" -->
-## Pinning Requirements
-
-If your code runs, find out your libraries- and Python versions.
-
-<div style="float: left; width: 49%;">
-<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash">$ pip freeze
-attrs==23.2.0
-blosc2==2.4.0
-Bottleneck==1.3.7
-certifi==2023.11.17
-[...]                          
-</code></pre>
-
-<pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-bash">$ python --version 
-Python 3.10.13                 
-</code></pre>
-
-<pre style="width: max-content;" class="fragment" data-fragment-index="2"><code style="padding: .5em 1em;" class="language-bash"># Tip!
-$ pip freeze > requirements.txt
-</code></pre>
-</div>
-
-<div style="float: right; width: 49%;" class="fragment" data-fragment-index="1">
-  <img style="width: 3em; margin: 0 auto; padding: 0em;" src="./files/hacker-cat.png">
-  <div>
-  <ul>
-    <li>Update the <code>requirements.txt</code> file with pinned requirements.</li>
-    <li>Mention the Python version in the <code>README.md</code> file.</li>
-  </ul>
-  </div>
 </div>

@@ -1,6 +1,6 @@
 <!-- .slide: id="problem" data-state="white_overlay yellow_flag logo" data-background="./files/wires-7997980_1280.jpg" -->
 <!-- https://pixabay.com/photos/wires-electrical-current-electricity-7997980/ -->
-# Setting
+# Problem
 
 ---
 
