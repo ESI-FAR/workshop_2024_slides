@@ -765,20 +765,56 @@ network.add(
 
 </section>
 <section data-markdown="30_code_data.md" data-separator=^\r?\n===\r?\n$ data-separator-vertical=^\r?\n---\r?\n$>
-<!-- .slide: data-state="white_overlay 8 yellow_flag logo" id="split" data-background="./files/code_data.jpg" -->
+<!-- .slide: data-state="white_overlay 8 yellow_flag logo" id="split" data-background="./files/code_data.jpg" data-auto-animate -->
 <!-- https://pixabay.com/photos/coding-computer-hacker-hacking-1841550/ -->
 <!-- https://pixabay.com/photos/files-paper-office-paperwork-stack-1614223/ -->
-<h1 style="transform: translate(-15vw, 15vh);">Split Code,</h1>
+<h1 data-id="code_1" style="transform: translate(-15vw, 15vh);">Split Code,</h1>
 <div style="transform: translate(15vw, 30vh);">
-    <h1>Configuration<span class="fragment" data-fragment-index="1">,</span></h1>
-    <h1 class="fragment" data-fragment-index="1">And Data</h1>
+    <h1 data-id="data_1">Data<span class="fragment" data-fragment-index="1">,</span></h1>
+    <h1 data-id="config_1" class="fragment" data-fragment-index="1">And Config</h1>
 </div>
 
 
 ---
 
+<!-- .slide: data-state="white_overlay 9 yellow_flag logo" data-background="./files/code_data.jpg" data-auto-animate -->
+<div style="width: 50%; margin: auto; padding-bottom: 1em;">
+<h1 data-id="code_1">Code?</h1>
+
+<ul class="fragment">
+  <li>"What's happening?"</li>
+  <li>Energy System Model</li>
+  <li>Version control</li>
+</ul>
+
+</div>
+
+<div style="width: 49%; float: left;">
+<h1 data-id="data_1">Data?</h1>
+
+<ul class="fragment">
+  <li>"What are we working with?"</li>
+  <li>List of energy system nodes</li>
+  <li>No touchey! Version control</li>
+</ul>
+
+</div>
+
+<div style="width: 49%; float: right;">
+<h1 data-id="config_1">Config?</h1>
+
+<ul class="fragment">
+  <li>"How exactly?"</li>
+  <li>Which nodes to disrupt?</li>
+  <li>Store with results</li>
+</ul>
+
+</div>
+
+---
+
 <!-- .slide: data-state="white_overlay 9 yellow_flag logo" data-background="./files/code_data.jpg" -->
-## Code? Data? Config? Parameters?
+## Why Split?
 
 Imagine you want to change simulation parameters. All resistances of 0.1 Ohm shall be replaced by 1 Ohm.
 
