@@ -1462,7 +1462,7 @@ Examples of <em>impurities</em>:
 
 ---
 
-<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" -->
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
 
 ## Examples
 
@@ -1470,33 +1470,279 @@ Examples of <em>impurities</em>:
 
 ### Impure
 
-<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def extend_list():
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list():
     my_list.append(5)
 </code></pre>
 
-<pre class="fragment" data-fragment-index="2"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>PI = 3.14
-def mult_with_pi(number):
-    return number * PI
+<pre class="fragment" data-fragment-index="2"><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def add_two(nums):
+    for index, x in enumerate(nums):
+        nums[index] = x + 2
+    return nums
+</code></pre>
+
+<pre data-id="pure_1" class="fragment" data-fragment-index="3"><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>$ python
+>>> nums = [1, 2]
+>>> add_two(nums)
+[3, 4]
+>>>
 </code></pre>
 
 </div>
 
-
-<div style="width: 49%; float: left;">
+<div style="width: 49%; float: right;">
 
 ### Pure
 
-<pre class="fragment" data-fragment-index="1"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>def extend_list(ext_list):
-    return ext_list + [5]
-</code></pre>
-
-<pre class="fragment" data-fragment-index="3"><code style="padding: .5em 1em;" class="language-python" data-line-numbers>PI = 3.14
-def mult_with_pi(number, PI):
-    return number * PI
+<pre class="fragment" data-fragment-index="1"><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list(my_list):
+    return my_list + [5]
 </code></pre>
 
 </div>
 
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Examples
+
+<div style="width: 49%; float: left;">
+
+### Impure
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list():
+    my_list.append(5)
+</code></pre>
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def add_two(nums):
+    for index, x in enumerate(nums):
+        nums[index] = x + 2
+    return nums
+</code></pre>
+
+<pre data-id="pure_1"><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>$ python
+>>> nums = [1, 2]
+>>> add_two(nums)
+[3, 4]
+>>> nums
+[3, 4]
+</code></pre>
+
+</div>
+
+<div style="width: 49%; float: right;">
+
+### Pure
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list(my_list):
+    return my_list + [5]
+</code></pre>
+
+</div>
+
+
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Examples
+
+<div style="width: 49%; float: left;">
+
+### Impure
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list():
+    my_list.append(5)
+</code></pre>
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def add_two(nums):
+    for index, x in enumerate(nums):
+        nums[index] = x + 2
+    return nums
+</code></pre>
+
+<pre data-id="pure_1"><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>$ python
+>>> nums = [1, 2]
+>>> add_two(nums)
+[3, 4]
+>>> nums
+[3, 4] 💀
+</code></pre>
+
+</div>
+
+<div style="width: 49%; float: right;">
+
+### Pure
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list(my_list):
+    return my_list + [5]
+</code></pre>
+
+</div>
+
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Examples
+
+<div style="width: 49%; float: left;">
+
+### Impure
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list():
+    my_list.append(5)
+</code></pre>
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def add_two(nums):
+    for index, x in enumerate(nums):
+        nums[index] = x + 2
+    return nums
+</code></pre>
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>$ python
+>>> nums = [1, 2]
+>>> add_two(nums)
+[3, 4]
+>>> nums
+[3, 4] 💀
+</code></pre>
+
+</div>
+
+
+<div style="width: 49%; float: right;">
+
+### Pure
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list(my_list):
+    return my_list + [5]
+</code></pre>
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def add_two(nums):
+    return [x + 2 for x in nums]
+
+
+</code></pre>
+
+<pre data-id="pure_2" class="fragment"><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>$ python
+>>> nums = [1, 2]
+>>> add_two(nums)
+[3, 4]
+>>>
+</code></pre>
+
+</div>
+
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Examples
+
+<div style="width: 49%; float: left;">
+
+### Impure
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list():
+    my_list.append(5)
+</code></pre>
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def add_two(nums):
+    for index, x in enumerate(nums):
+        nums[index] = x + 2
+    return nums
+</code></pre>
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>$ python
+>>> nums = [1, 2]
+>>> add_two(nums)
+[3, 4]
+>>> nums
+[3, 4] 💀
+</code></pre>
+
+</div>
+
+
+<div style="width: 49%; float: right;">
+
+### Pure
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list(my_list):
+    return my_list + [5]
+</code></pre>
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def add_two(nums):
+    return [x + 2 for x in nums]
+
+
+</code></pre>
+
+<pre data-id="pure_2"><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>$ python
+>>> nums = [1, 2]
+>>> add_two(nums)
+[3, 4]
+>>> nums
+[1, 2]
+</code></pre>
+
+</div>
+
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Examples
+
+<div style="width: 49%; float: left;">
+
+### Impure
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list():
+    my_list.append(5)
+</code></pre>
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def add_two(nums):
+    for index, x in enumerate(nums):
+        nums[index] = x + 2
+    return nums
+</code></pre>
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>$ python
+>>> nums = [1, 2]
+>>> add_two(nums)
+[3, 4]
+>>> nums
+[3, 4] 💀
+</code></pre>
+
+</div>
+
+
+<div style="width: 49%; float: right;">
+
+### Pure
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def extend_list(my_list):
+    return my_list + [5]
+</code></pre>
+
+<pre><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>def add_two(nums):
+    return [x + 2 for x in nums]
+
+
+</code></pre>
+
+<pre data-id="pure_2"><code style="padding: .5em 1em; font-size: smaller;" class="language-python" data-line-numbers>$ python
+>>> nums = [1, 2]
+>>> add_two(nums)
+[3, 4]
+>>> nums
+[1, 2]
+</code></pre>
+
+</div>
 
 ---
 
