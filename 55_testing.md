@@ -317,6 +317,259 @@ Examples of <em>impurities</em>:
 
 ---
 
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Purification of Randomness
+
+<div style="width: 49%; float: left;">
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand.py
+import random
+&nbsp;
+print(random.randint(0, 5),
+      random.randint(0, 5))
+&nbsp;
+</code></pre>
+
+<pre class="fragment" data-id="rand_1"><code style="padding: .5em 1em;" class="language-python">$ python rand.py
+</code></pre>
+</div>
+
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Purification of Randomness
+
+<div style="width: 49%; float: left;">
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand.py
+import random
+&nbsp;
+print(random.randint(0, 5),
+      random.randint(0, 5))
+&nbsp;
+</code></pre>
+
+<pre data-id="rand_1"><code style="padding: .5em 1em;" class="language-python">$ python rand.py
+4 4
+</code></pre>
+</div>
+
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Purification of Randomness
+
+<div style="width: 49%; float: left;">
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand.py
+import random
+&nbsp;
+print(random.randint(0, 5),
+      random.randint(0, 5))
+&nbsp;
+</code></pre>
+
+<pre data-id="rand_1"><code style="padding: .5em 1em;" class="language-python">$ python rand.py
+4 4
+$ python rand.py
+2 4
+</code></pre>
+</div>
+
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Purification of Randomness
+
+<div style="width: 49%; float: left;">
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand.py
+import random
+&nbsp;
+print(random.randint(0, 5),
+      random.randint(0, 5))
+&nbsp;
+</code></pre>
+
+<pre data-id="rand_1"><code style="padding: .5em 1em;" class="language-python">$ python rand.py
+4 4
+$ python rand.py
+2 4
+$ python rand.py
+3 1
+</code></pre>
+</div>
+
+<div style="width: 49%; float: right;">
+<pre class="fragment" data-id="rand_2"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand_seed.py
+import random
+&nbsp;
+print(random.randint(0, 5),
+      random.randint(0, 5))
+&nbsp;
+</code></pre>
+
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Purification of Randomness
+
+<div style="width: 49%; float: left;">
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand.py
+import random
+&nbsp;
+print(random.randint(0, 5),
+      random.randint(0, 5))
+&nbsp;
+</code></pre>
+
+<pre><code style="padding: .5em 1em;" class="language-python">$ python rand.py
+4 4
+$ python rand.py
+2 4
+$ python rand.py
+3 1
+</code></pre>
+</div>
+
+<div style="width: 49%; float: right;">
+<pre data-id="rand_2"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand_seed.py
+import random
+&nbsp;
+random.seed(0)  # determinism
+print(random.randint(0, 5),
+      random.randint(0, 5))
+</code></pre>
+
+<pre class="fragment" data-id="rand_3"><code style="padding: .5em 1em;" class="language-python">$ python rand_seed.py
+</code></pre>
+</div>
+
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Purification of Randomness
+
+<div style="width: 49%; float: left;">
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand.py
+import random
+&nbsp;
+print(random.randint(0, 5),
+      random.randint(0, 5))
+&nbsp;
+</code></pre>
+
+<pre><code style="padding: .5em 1em;" class="language-python">$ python rand.py
+4 4
+$ python rand.py
+2 4
+$ python rand.py
+3 1
+</code></pre>
+</div>
+
+<div style="width: 49%; float: right;">
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand_seed.py
+import random
+&nbsp;
+random.seed(0)  # determinism
+print(random.randint(0, 5),
+      random.randint(0, 5))
+</code></pre>
+
+<pre data-id="rand_3"><code style="padding: .5em 1em;" class="language-python">$ python rand_seed.py
+3 0
+</code></pre>
+</div>
+
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Purification of Randomness
+
+<div style="width: 49%; float: left;">
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand.py
+import random
+&nbsp;
+print(random.randint(0, 5),
+      random.randint(0, 5))
+&nbsp;
+</code></pre>
+
+<pre><code style="padding: .5em 1em;" class="language-python">$ python rand.py
+4 4
+$ python rand.py
+2 4
+$ python rand.py
+3 1
+</code></pre>
+</div>
+
+<div style="width: 49%; float: right;">
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand_seed.py
+import random
+&nbsp;
+random.seed(0)  # determinism
+print(random.randint(0, 5),
+      random.randint(0, 5))
+</code></pre>
+
+<pre data-id="rand_3"><code style="padding: .5em 1em;" class="language-python">$ python rand_seed.py
+3 0
+$ python rand_seed.py
+3 0
+</code></pre>
+</div>
+
+---
+
+<!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" data-auto-animate -->
+
+## Purification of Randomness
+
+<div style="width: 49%; float: left;">
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand.py
+import random
+&nbsp;
+print(random.randint(0, 5),
+      random.randint(0, 5))
+&nbsp;
+</code></pre>
+
+<pre><code style="padding: .5em 1em;" class="language-python">$ python rand.py
+4 4
+$ python rand.py
+2 4
+$ python rand.py
+3 1
+</code></pre>
+</div>
+
+<div style="width: 49%; float: right;">
+<pre><code style="padding: .5em 1em;" class="language-python" data-line-numbers># rand_seed.py
+import random
+&nbsp;
+random.seed(0)  # determinism
+print(random.randint(0, 5),
+      random.randint(0, 5))
+</code></pre>
+
+<pre data-id="rand_3"><code style="padding: .5em 1em;" class="language-python">$ python rand_seed.py
+3 0
+$ python rand_seed.py
+3 0
+$ python rand_seed.py
+3 0
+</code></pre>
+</div>
+
+<span class="fragment">Explore mitigations for impurities!</span>
+
+---
+
 <!-- .slide: data-state="blue_overlay 9 yellow_flag logo" data-background="./files/laboratory-217041_1280.jpg" -->
 
 ## Benefit of Purity
