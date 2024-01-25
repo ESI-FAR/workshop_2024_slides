@@ -1,18 +1,35 @@
-<!-- .slide: data-state="standard" data-background="./files/checklist-2589418_1280.jpg" -->
+<!-- .slide: data-state="black_overlay yellow_flag icon" data-background="./files/checklist-2589418_1280.jpg" -->
 <!-- https://pixabay.com/photos/checklist-goals-box-notebook-pen-2589418/ -->
-## Table of Contents
+## Agenda
 
-<ol>
-  <li><a href="#/problem">Problem</a></li>
-  <li><a href="#/environments">Virtual Environment</a></li>
-  <li><a href="#/comments_1">Comments 1/2</a></li>
-  <li><a href="#/formatting">Formatting</a></li>
-  <li><a href="#/debugging">Debugging</a></li>
-  <li><a href="#/split">Splitting Code and Data</a></li>
-  <li><a href="#/functions">Functions</a></li>
-  <li><a href="#/modules">Modules</a></li>
-  <li><a href="#/comments_2">Comments 2/2</a></li>
-  <li><a href="#/type_hinting">Type Hinting</a></li>
-  <li><a href="#/testing">Testing</a></li>
-</ol>
+<div style="width: 45%; float: left;">
+  <h4>Wed, January 31<sup>st</sup></h4>
+  <ul style="list-style-type: ''; font-size: 65%; line-height: 150%;">
+    <li><code>09:00 </code> <a href="/kick-off">Kick-Off</a> 🎥</li>
+    <li><code>09:30 </code> <a href="/partners">Partner Introductions</a> 🎥 </li>
+    <li><code>11:00 </code> <a href="/best_practices">Intro Software Best Practices</a> 🎥</li>
+    <li><code>12:00 </code> Lunch Break at Café Neo</li>
+    <li><code>13:00 </code> <a href="/best_practices">Software Best Practices Cont.</a> 🎥</li>
+    <li><code>15:00 </code> <a href="/best_practices">Software Best Practices Cont.</a> 🎥</li>
+    <!--li><code>16:00 </code> <a href="/?">Spine Tools Overview (Tars)</a> 🎥</li-->
+    <li><code>16:00 </code> Spine Tools Overview (Tars) 🎥</li>
+    <li><code>17:00 </code> <a href="/wrap_up_1">Wrap Up Day 1</a> 🎥</li>
+  </ul>
+</div>
 
+<div style="width: 54%; float: right;">
+  <h4>Thu, February 1<sup>st</sup></h4>
+  <ul style="list-style-type: ''; font-size: 65%; line-height: 150%;">
+    <li><code>09:00 </code> <a href="/recap">Recap Day 1</a> 🎥</li>
+    <li><code>09:30 </code> <a href="#">Speed Dating</a></li>
+    <li><code>09:00 </code> <a href="/brainstorm">Brainstorming Synergies</a> 🎥</li>
+    <li><code>12:00 </code> Lunch Break at Café Neo</li>
+    <!--li><code>13:00 </code> <a href="#">Best Practices in Tulipa (Diego)</a> 🎥</li-->
+    <li><code>13:00 </code> Best Practices in Tulipa (Diego) 🎥</li>
+    <!--li><code>14:30 </code> <a href="#">Geo Information System (Maurice)</a> 🎥</li-->
+    <li><code>14:30 </code> Geo Information System (Maurice) 🎥</li>
+    <!--li><code>15:30 </code> <a href="#">Model Coupling Intro (Lourens)</a> 🎥</li-->
+    <li><code>15:30 </code> Model Coupling Intro (Lourens) 🎥</li>
+    <li><code>16:30 </code> <a href="/wrap_up_2">Feedback, Wrap Up Workshop</a> 🎥</li>
+  </ul>
+</div>
