@@ -2,7 +2,7 @@
 <!-- https://pixabay.com/photos/coding-computer-hacker-hacking-1841550/ -->
 <!-- https://pixabay.com/photos/files-paper-office-paperwork-stack-1614223/ -->
 <h1 data-id="code_1" style="transform: translate(-15vw, 15vh);">Split Code,</h1>
-<div style="transform: translate(15vw, 30vh);">
+<div style="transform: translate(15vw, 15vh);">
     <h1 data-id="data_1">Data<span class="fragment" data-fragment-index="1">,</span></h1>
     <h1 data-id="config_1" class="fragment" data-fragment-index="1">And Config</h1>
 </div>
