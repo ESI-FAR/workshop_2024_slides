@@ -2,5 +2,3 @@
 <!-- https://pixabay.com/photos/teamwork-cooperation-business-3309829/ -->
 
 # Synergies
-
-- ?

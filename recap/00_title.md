@@ -17,7 +17,7 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 <br>
 <br>
 
-[Author Name](mailto:a.name@esciencecenter.nl)
+&nbsp;
 
 ===
 

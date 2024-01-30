@@ -10,4 +10,4 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 # ESI-far Workshop 2024
 
-[Ole Mussmann](mailto:o.mussmann@esciencecenter.nl)
+[Ole Mussmann](mailto:o.mussmann@esciencecenter.nl) | [Sander van Rijn](mailto:s.vanrijn@esciencecenter.nl) | [Suvayu Ali](mailto:s.ali@esciencecenter.nl) | [Laurent Soucasse](mailto:l.soucasse@esciencecenter.nl)

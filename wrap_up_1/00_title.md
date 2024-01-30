@@ -11,8 +11,6 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 # Wrap Up Day 1
 
-[Author Name](mailto:a.name@esciencecenter.nl)
-
 ===
 
 <!-- .slide: data-state="white_overlay yellow_flag logo" data-background="./files/marketing-6078538_1280.png"-->
@@ -34,4 +32,6 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 <!-- https://pixabay.com/photos/salad-healthy-dish-nutrition-2068217/ -->
 ## Dinner
 
-Come join us for dinner at:
+Come join us for dinner at 19:00 at Maslow Café
+
+<iframe style="height: 40vh; width: 100%; padding-top: 1em;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1706.2210809691483!2d4.950537297836231!3d52.35482920899248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609433cf943a9%3A0x81d4e085164a870d!2sMaslow%20Caf%C3%A9!5e1!3m2!1snl!2snl!4v1706646465541!5m2!1snl!2snl" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

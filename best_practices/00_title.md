@@ -11,5 +11,3 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 # Best Practices
 ## for Software Development
-
-[Ole Mussmann](mailto:o.mussmann@esciencecenter.nl)

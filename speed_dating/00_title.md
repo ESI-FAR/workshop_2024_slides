@@ -11,5 +11,3 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 # Speed Dating
 ## Getting To Know Each Other
-
-[Author Name](mailto:a.name@esciencecenter.nl)

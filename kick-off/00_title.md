@@ -10,5 +10,3 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 <!-- https://pixabay.com/videos/football-soccer-kick-101791/ -->
 
 # Kick-Off
-
-[Author Name](mailto:a.name@esciencecenter.nl)

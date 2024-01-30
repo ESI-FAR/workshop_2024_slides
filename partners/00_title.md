@@ -12,8 +12,6 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 # Partner Introductions
 ## Who is who?
 
-[Author Name](mailto:a.name@esciencecenter.nl)
-
 ===
 
 <!-- .slide: data-state="blue_overlay yellow_flag logo" data-background="./files/eScience-1555-Edit-1024x683.jpg" -->

@@ -10,8 +10,6 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 
 # Wrap Up Workshop
 
-[Author Name](mailto:a.name@esciencecenter.nl)
-
 ===
 
 <!-- .slide: data-state="white_overlay yellow_flag logo" data-background="./files/marketing-6078538_1280.png"-->
@@ -28,9 +26,9 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 </div>
 
 <div class="fragment">
-<img style="opacity: 0.5; height: 15vw; padding: 0; margin: 0;" alt="QR code encoding the slides URL" src="./files/qr_slides.gif">
+<img style="opacity: 0.5; height: 15vw; padding: 0; margin: 0;" alt="QR code encoding the slides URL" src="./files/qr_feedback.gif">
 <!-- TODO correct QR -->
 
-<a href="https://esi-far.github.io/workshop_2024_slides/">esi-far.github.io/workshop_2024_slides</a>
+<a href="https://doc.ole.mn/esi-far#Feedback">doc.ole.mn/esi-far#Feedback</a>
 <!-- TODO exit questionnaire URL -->
 </div>
