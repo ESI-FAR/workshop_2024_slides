@@ -27,7 +27,7 @@
     <!--li><code>13:00 </code> <a href="./?">Best Practices in Tulipa (Diego)</a> 🎥</li-->
     <li><code>13:00 </code> Best Practices in Tulipa (Diego) 🎥</li>
     <!--li><code>14:30 </code> <a href="./?">Geo Information System (Maurice)</a> 🎥</li-->
-    <li><code>14:30 </code> Geo Information System (Maurice) 🎥</li>
+    <li><code>14:30 </code> Geographic Information Science (Maurice) 🎥</li>
     <!--li><code>15:30 </code> <a href="./?">Model Coupling Intro (Lourens)</a> 🎥</li-->
     <li><code>15:30 </code> Model Coupling Intro (Lourens) 🎥</li>
     <li><code>16:30 </code> <a href="./wrap_up_2">Feedback, Wrap Up Workshop</a> 🎥</li>
