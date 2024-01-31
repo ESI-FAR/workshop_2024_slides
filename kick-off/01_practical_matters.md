@@ -4,11 +4,10 @@
 
 <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
   <span style="text-align: left;">
-network: abc<br>
-password: def<br>
-TODO replace
+network: MatrixONE<br>
+password: AmsterdamONE<br>
   </span>
-<img style="opacity: 0.5; height: 30vh; padding: 0; margin: 0; position: absolute; right: 0;" alt="QR code encoding the slides URL" src="./files/qr_slides.gif">
+<img style="opacity: 0.9; height: 30vh; padding: 0; margin: 0; position: absolute; right: 0;" alt="QR code encoding the slides URL" src="./files/qr_wifi.svg">
 </div>
 
 ---
