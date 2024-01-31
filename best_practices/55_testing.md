@@ -621,6 +621,8 @@ AssertionError
 ## What's In A Name?
 
 <pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-python" data-line-numbers># module.py
+print("I run always")  # Don't do this
+
 def myfunc():
     print("Function called")
 
@@ -630,11 +632,13 @@ if __name__ == "__main__":
 
 <pre style="width: max-content;"><code style="padding: .5em 1em;" class="language-python">$ python
 >>> import module
+I run always
 >>> module.myfunc()
 Function called
 
 $ python module.py
-Module running directly               
+I run always
+Module running directly                 
 </code></pre>
 
 ---

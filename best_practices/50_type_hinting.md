@@ -96,6 +96,6 @@ def my_func(arg_one: TYPE, arg_two: TYPE = value) -> RETURN_TYPE:
 <div class="fragment">
   <img style="width: 2em; margin: 0; padding: 1.25em 1em 0em 10%; float: left;" src="./files/hacker-cat.png">
   <div style="float: left; width: 60%; padding-top: .25em;">
-    Type-hint <code>radians_to_degrees</code>.<br>Check your documentation with <code>help(radians_to_degrees)</code>.
+    Type-hint <code>radians_to_degrees</code>.<br>Check your documentation with <code>help(radians_to_degrees)</code> in a Python console.
   </div>
 </div>
