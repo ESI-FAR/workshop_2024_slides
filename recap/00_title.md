@@ -31,11 +31,11 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
   <li class="fragment" data-fragment-index="1">Commenting</li>
   <li class="fragment" data-fragment-index="1">Formatting</li>
   <li class="fragment" data-fragment-index="1">Debugging</li>
-  <li class="fragment" data-fragment-index="2">Lunch at Neo</li>
+  <li class="fragment" data-fragment-index="2">Lunch at Neo 🥘</li>
   <li class="fragment" data-fragment-index="3">Code / Data</li>
   <li class="fragment" data-fragment-index="3">Functions</li>
-  <li class="fragment" data-fragment-index="3">...</li>
-  <li class="fragment" data-fragment-index="4">Using Spine Tools</li>
+  <li class="fragment" data-fragment-index="3">Modules</li>
+  <li class="fragment" data-fragment-index="4">Using Spine Tools 🔨</li>
 </ul>
 
 <span style="font-size: small;">Image: <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/PreviouslyOn">tvtropes.org/pmwiki/pmwiki.php/Main/PreviouslyOn</a></span>
