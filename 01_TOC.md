@@ -25,8 +25,7 @@
     <li><code>10:30 </code> <a href="./brainstorm">Brainstorming Synergies</a> 🎥</li>
     <li><code>11:00 </code> <a href="./best_practices">Software Best Practices Cont.</a> 🎥</li>
     <li><code>12:00 </code> Lunch Break at Café Neo</li>
-    <!--li><code>13:00 </code> <a href="./?">Best Practices in Tulipa (Diego)</a> 🎥</li-->
-    <li><code>13:00 </code> Best Practices in Tulipa (Diego) 🎥</li>
+    <li><code>13:00 </code> <a href="./ppt/202401-ESI-far-day2-applying-software-best-practices-Tulipa.pdf">Best Practices in Tulipa (Diego)</a> 🎥</li>
     <!--li><code>14:30 </code> <a href="./?">Geo Information System (Maurice)</a> 🎥</li-->
     <li><code>14:30 </code> Geographic Inf. Science (Maurice) 🎥</li>
     <!--li><code>15:30 </code> <a href="./?">Model Coupling Intro (Lourens)</a> 🎥</li-->
