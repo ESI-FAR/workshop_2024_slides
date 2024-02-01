@@ -12,7 +12,7 @@
     <li><code>13:00 </code> <a href="./best_practices">Software Best Practices Cont.</a> 🎥</li>
     <li><code>15:00 </code> <a href="./best_practices">Software Best Practices Cont.</a> 🎥</li>
     <!--li><code>16:00 </code> <a href="./?">Spine Tools Overview (Tars)</a> 🎥</li-->
-    <li><code>16:00 </code> Spine Tools Overview (Tars) 🎥</li>
+    <li><code>16:00 </code> <a href="./ppt/esifarworkshop_20240131_mopo_TV.pptx">Mopo</a> / <a href="./ppt/esifarworkshop_20240131_spinetools_TV.pptx">Spine Tools</a> (Tars) 🎥</li>
     <li><code>17:00 </code> <a href="./wrap_up_1">Wrap Up Day 1</a> 🎥</li>
   </ul>
 </div>
