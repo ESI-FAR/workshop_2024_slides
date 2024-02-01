@@ -32,3 +32,10 @@ plugins: RevealMarkdown, RevealChalkboard, RevealHighlight, RevealMath.KaTeX, Re
 <a href="https://doc.ole.mn/esi-far#Feedback">doc.ole.mn/esi-far#Feedback</a>
 <!-- TODO exit questionnaire URL -->
 </div>
+
+---
+
+<!-- .slide: data-state="white_overlay yellow_flag logo" data-background="./files/hands-4153925_1280.jpg"-->
+<!-- https://pixabay.com/photos/hands-receive-light-heart-4153925/ -->
+
+# Thank you! 💕
